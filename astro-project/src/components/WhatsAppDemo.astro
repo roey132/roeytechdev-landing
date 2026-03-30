@@ -36,7 +36,7 @@
       </div>
 
       <!-- Messages Container -->
-      <div class="flex-1 overflow-y-auto px-3 py-3 space-y-2" id="chat-messages">
+      <div class="flex-1 overflow-y-auto overflow-x-hidden px-3 py-3 space-y-2" id="chat-messages">
         <!-- Messages will be inserted here -->
       </div>
 
@@ -61,17 +61,11 @@
         </div>
       </div>
 
-      <!-- Input Area -->
-      <div class="bg-white dark:bg-zinc-900 border-t border-stone-200 dark:border-zinc-800 px-3 py-2 flex-shrink-0">
-        <div class="flex items-center gap-2">
-          <div class="flex-1 bg-stone-100 dark:bg-zinc-800 rounded-full px-3 py-1.5">
-            <div class="text-stone-400 dark:text-zinc-500 text-xs">הקלד הודעה...</div>
-          </div>
-          <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0">
-            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
-            </svg>
-          </div>
+      <!-- Bottom Bar -->
+      <div class="bg-stone-100 dark:bg-zinc-950 border-t border-stone-200 dark:border-zinc-800 flex-shrink-0">
+        <!-- iPhone Home Indicator -->
+        <div class="flex justify-center items-center py-4">
+          <div class="w-32 h-1 bg-stone-400 dark:bg-zinc-600 rounded-full"></div>
         </div>
       </div>
     </div>
@@ -83,19 +77,45 @@
     transition: all 0.3s ease;
   }
 
-  .message-enter {
-    animation: messageSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  #chat-messages {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #chat-messages::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  #chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  #chat-messages::-webkit-scrollbar-thumb {
+    background: #d6d3d1;
+    border-radius: 2px;
+  }
+
+  #chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #a8a29e;
   }
 
   @keyframes messageSlideIn {
-    from {
+    0% {
       opacity: 0;
-      transform: translateY(8px) scale(0.95);
+      transform: translateY(20px) scale(0.8);
     }
-    to {
+    60% {
+      transform: translateY(-5px) scale(1.02);
+    }
+    100% {
       opacity: 1;
       transform: translateY(0) scale(1);
     }
+  }
+
+  .message-animation {
+    animation: messageSlideIn 0.4s ease-out forwards;
   }
 
   .typing-dot {
@@ -118,24 +138,6 @@
       transform: scale(1);
     }
   }
-
-  /* Custom scrollbar for chat */
-  #chat-messages::-webkit-scrollbar {
-    width: 4px;
-  }
-
-  #chat-messages::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  #chat-messages::-webkit-scrollbar-thumb {
-    background: #d6d3d1;
-    border-radius: 2px;
-  }
-
-  #chat-messages::-webkit-scrollbar-thumb:hover {
-    background: #a8a29e;
-  }
 </style>
 
 <script>
@@ -157,7 +159,7 @@
 
   function createMessageElement(message) {
     const messageDiv = document.createElement('div');
-    messageDiv.className = `flex ${message.type === 'customer' ? 'justify-end' : 'justify-start'} message-enter`;
+    messageDiv.className = `flex ${message.type === 'customer' ? 'justify-end' : 'justify-start'}`;
 
     const bubbleClass = message.type === 'customer'
       ? 'bg-green-600 text-white rounded-2xl rounded-br-sm'
@@ -196,7 +198,20 @@
 
   function addMessage(message) {
     const messageElement = createMessageElement(message);
+    
+    // Start with hidden state
+    messageElement.style.opacity = '0';
+    
     chatMessages.appendChild(messageElement);
+    
+    // Trigger animation after a brief delay
+    setTimeout(() => {
+      messageElement.style.opacity = '1';
+      messageElement.classList.add('message-animation');
+      
+      // Scroll to show the new message
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }, 50);
   }
 
   async function playConversation() {
@@ -211,14 +226,14 @@
 
     // Show typing indicator first
     showTyping(message.type);
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise(resolve => setTimeout(resolve, 800));
     hideTyping(message.type);
 
     addMessage(message);
     currentMessageIndex++;
 
-    // Schedule next message with varied timing
-    const nextDelay = message.type === 'bot' ? 2500 : 2000;
+    // Schedule next message with faster timing
+    const nextDelay = message.type === 'bot' ? 1800 : 1500;
     setTimeout(playConversation, nextDelay);
   }
 
