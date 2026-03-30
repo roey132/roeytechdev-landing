@@ -40,9 +40,9 @@
         <!-- Messages will be inserted here -->
       </div>
 
-      <!-- Typing Indicators -->
+      <!-- Typing Indicators (outside messages container, positioned dynamically) -->
       <div id="typing-indicator-bot" class="px-3 pb-2 hidden">
-        <div class="inline-flex items-center gap-1 bg-white dark:bg-zinc-800 rounded-2xl rounded-bl-sm px-3 py-1.5 shadow-sm">
+        <div class="inline-flex items-center gap-1 bg-white dark:bg-zinc-800 rounded-2xl rounded-br-sm px-3 py-1.5 shadow-sm">
           <div class="flex gap-0.5">
             <div class="w-1.5 h-1.5 bg-stone-400 rounded-full animate-bounce" style="animation-delay: 0ms"></div>
             <div class="w-1.5 h-1.5 bg-stone-400 rounded-full animate-bounce" style="animation-delay: 150ms"></div>
@@ -52,7 +52,7 @@
       </div>
       
       <div id="typing-indicator-customer" class="px-3 pb-2 hidden justify-end">
-        <div class="inline-flex items-center gap-1 bg-green-600 rounded-2xl rounded-br-sm px-3 py-1.5 shadow-sm">
+        <div class="inline-flex items-center gap-1 bg-green-600 rounded-2xl rounded-bl-sm px-3 py-1.5 shadow-sm">
           <div class="flex gap-0.5">
             <div class="w-1.5 h-1.5 bg-white rounded-full animate-bounce" style="animation-delay: 0ms"></div>
             <div class="w-1.5 h-1.5 bg-white rounded-full animate-bounce" style="animation-delay: 150ms"></div>
@@ -162,8 +162,8 @@
     messageDiv.className = `flex ${message.type === 'customer' ? 'justify-end' : 'justify-start'}`;
 
     const bubbleClass = message.type === 'customer'
-      ? 'bg-green-600 text-white rounded-2xl rounded-br-sm'
-      : 'bg-white dark:bg-zinc-800 text-stone-900 dark:text-stone-100 rounded-2xl rounded-bl-sm';
+      ? 'bg-green-600 text-white rounded-2xl rounded-bl-sm'
+      : 'bg-white dark:bg-zinc-800 text-stone-900 dark:text-stone-100 rounded-2xl rounded-br-sm';
 
     messageDiv.innerHTML = `
       <div class="max-w-[85%] ${bubbleClass} px-3 py-1.5 shadow-sm">
