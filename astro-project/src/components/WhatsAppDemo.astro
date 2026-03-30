@@ -1,0 +1,204 @@
+---
+---
+<div class="relative w-full max-w-md mx-auto" id="whatsapp-demo">
+  <!-- Phone Frame -->
+  <div class="relative bg-stone-900 dark:bg-zinc-900 rounded-[3rem] p-3 shadow-2xl">
+    <!-- Inner Screen -->
+    <div class="bg-stone-100 dark:bg-zinc-950 rounded-[2.5rem] overflow-hidden">
+      <!-- Status Bar -->
+      <div class="bg-green-600 dark:bg-green-700 px-6 py-2 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+          <span class="text-white text-sm font-medium">WhatsApp Business</span>
+        </div>
+        <div class="text-white text-xs">🔔 3</div>
+      </div>
+
+      <!-- Chat Header -->
+      <div class="bg-green-600 dark:bg-green-700 px-4 py-3 flex items-center gap-3">
+        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+          <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+          </svg>
+        </div>
+        <div class="flex-1">
+          <div class="text-white font-semibold text-sm">RoeyTechDev Bot</div>
+          <div class="text-green-100 text-xs flex items-center gap-1">
+            <span class="w-2 h-2 bg-green-300 rounded-full animate-pulse"></span>
+            מחובר
+          </div>
+        </div>
+      </div>
+
+      <!-- Messages Container -->
+      <div id="chat-messages" class="h-96 overflow-y-auto px-4 py-4 space-y-3 scroll-smooth">
+        <!-- Messages will be inserted here -->
+      </div>
+
+      <!-- Typing Indicator -->
+      <div id="typing-indicator" class="px-4 pb-2 hidden">
+        <div class="inline-flex items-center gap-2 bg-white dark:bg-zinc-800 rounded-2xl rounded-bl-sm px-4 py-2 shadow-sm">
+          <div class="flex gap-1">
+            <div class="w-2 h-2 bg-stone-400 rounded-full animate-bounce" style="animation-delay: 0ms"></div>
+            <div class="w-2 h-2 bg-stone-400 rounded-full animate-bounce" style="animation-delay: 150ms"></div>
+            <div class="w-2 h-2 bg-stone-400 rounded-full animate-bounce" style="animation-delay: 300ms"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Area -->
+      <div class="bg-white dark:bg-zinc-900 border-t border-stone-200 dark:border-zinc-800 px-4 py-3">
+        <div class="flex items-center gap-3">
+          <div class="flex-1 bg-stone-100 dark:bg-zinc-800 rounded-full px-4 py-2">
+            <div class="text-stone-400 dark:text-zinc-500 text-sm">הקלד הודעה...</div>
+          </div>
+          <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .message-enter {
+    animation: messageSlideIn 0.3s ease-out;
+  }
+
+  @keyframes messageSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .typing-dot {
+    animation: typingBounce 1.4s infinite ease-in-out both;
+  }
+
+  .typing-dot:nth-child(1) {
+    animation-delay: -0.32s;
+  }
+
+  .typing-dot:nth-child(2) {
+    animation-delay: -0.16s;
+  }
+
+  @keyframes typingBounce {
+    0%, 80%, 100% {
+      transform: scale(0);
+    }
+    40% {
+      transform: scale(1);
+    }
+  }
+
+  /* Custom scrollbar for chat */
+  #chat-messages::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  #chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  #chat-messages::-webkit-scrollbar-thumb {
+    background: #d6d3d1;
+    border-radius: 3px;
+  }
+
+  #chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #a8a29e;
+  }
+</style>
+
+<script>
+  const messages = [
+    { type: 'customer', text: 'היי, אני מתעניין בשירותי האוטומציה שלכם' },
+    { type: 'bot', text: 'היי! 👋 ברור הבא ל-RoeyTechDev. איך אני יכול לעזור לך היום?' },
+    { type: 'customer', text: 'אני בעל עסק קטן ואני רוצה להוסיף צ\'אטבוט לאתר שלי' },
+    { type: 'bot', text: 'מצוין! 😊 צ\'אטבוט באתר יכול לעזור לך ללכוד לידים 24/7, גם כשאתה סגור. כמה פניות אתה מקבל בחודש בערך?' },
+    { type: 'customer', text: 'בערך 50-100 פניות, תלוי בעונה' },
+    { type: 'bot', text: 'בולו! אז צ\'אטבוט יכול לחסוך לך המון זמן. הוא יכול לענות על שאלות נפוצות, לסנן לידים ולהעביר לך רק פניות רלוונטיות. תרצה לשמוע עוד?' },
+    { type: 'customer', text: 'כן, בהחלט! זה נשמע בדיוק מה שאני צריך' },
+    { type: 'bot', text: '👍 אשמח להסביר לך יותר! בוא נשב פגישה קצרה של 15 דקות ואני אראה לך איך זה עובד בדיוק. מתי מתאים לך?' },
+  ];
+
+  let currentMessageIndex = 0;
+  const chatMessages = document.getElementById('chat-messages');
+  const typingIndicator = document.getElementById('typing-indicator');
+
+  function createMessageElement(message) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `flex ${message.type === 'customer' ? 'justify-end' : 'justify-start'} message-enter`;
+
+    const bubbleClass = message.type === 'customer'
+      ? 'bg-green-600 text-white rounded-2xl rounded-br-sm'
+      : 'bg-white dark:bg-zinc-800 text-stone-900 dark:text-stone-100 rounded-2xl rounded-bl-sm';
+
+    messageDiv.innerHTML = `
+      <div class="max-w-[80%] ${bubbleClass} px-4 py-2 shadow-sm">
+        <p class="text-sm leading-relaxed">${message.text}</p>
+        <div class="text-[10px] mt-1 ${message.type === 'customer' ? 'text-green-100' : 'text-stone-400 dark:text-zinc-500'}">
+          ${new Date().toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit' })}
+        </div>
+      </div>
+    `;
+
+    return messageDiv;
+  }
+
+  function showTyping() {
+    typingIndicator.classList.remove('hidden');
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function hideTyping() {
+    typingIndicator.classList.add('hidden');
+  }
+
+  function addMessage(message) {
+    const messageElement = createMessageElement(message);
+    chatMessages.appendChild(messageElement);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  async function playConversation() {
+    if (currentMessageIndex >= messages.length) {
+      // Reset and restart
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      chatMessages.innerHTML = '';
+      currentMessageIndex = 0;
+    }
+
+    const message = messages[currentMessageIndex];
+
+    // Show typing indicator for bot messages
+    if (message.type === 'bot') {
+      showTyping();
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      hideTyping();
+    } else {
+      // Small delay for customer messages
+      await new Promise(resolve => setTimeout(resolve, 500));
+    }
+
+    addMessage(message);
+    currentMessageIndex++;
+
+    // Schedule next message
+    setTimeout(playConversation, 2000);
+  }
+
+  // Start the conversation when the component loads
+  setTimeout(playConversation, 1000);
+</script>
