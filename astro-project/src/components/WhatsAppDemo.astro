@@ -199,19 +199,26 @@
   function addMessage(message) {
     const messageElement = createMessageElement(message);
     
-    // Start with hidden state
+    // Start with hidden state and no animation class
     messageElement.style.opacity = '0';
+    messageElement.style.transform = 'scale(0.8) translateY(20px)';
     
     chatMessages.appendChild(messageElement);
     
-    // Trigger animation after a brief delay
-    setTimeout(() => {
+    // Force browser to render the element first
+    void messageElement.offsetHeight;
+    
+    // Then trigger the animation
+    requestAnimationFrame(() => {
+      messageElement.style.transition = 'all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
       messageElement.style.opacity = '1';
-      messageElement.classList.add('message-animation');
+      messageElement.style.transform = 'scale(1) translateY(0)';
       
       // Scroll to show the new message
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-    }, 50);
+      setTimeout(() => {
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }, 100);
+    });
   }
 
   async function playConversation() {
