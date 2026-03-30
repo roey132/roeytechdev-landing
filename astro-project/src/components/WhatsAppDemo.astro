@@ -1,61 +1,74 @@
 ---
 ---
-<div class="relative w-full max-w-md mx-auto" id="whatsapp-demo">
+<div class="relative w-[320px] mx-auto" id="whatsapp-demo">
   <!-- Phone Frame -->
-  <div class="relative bg-stone-900 dark:bg-zinc-900 rounded-[3rem] p-3 shadow-2xl">
+  <div class="relative bg-stone-900 dark:bg-zinc-900 rounded-[3rem] p-2 shadow-2xl">
+    <!-- Dynamic Island -->
+    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-7 bg-black rounded-b-2xl z-10"></div>
+    
     <!-- Inner Screen -->
-    <div class="bg-stone-100 dark:bg-zinc-950 rounded-[2.5rem] overflow-hidden">
+    <div class="bg-stone-100 dark:bg-zinc-950 rounded-[2.5rem] overflow-hidden flex flex-col h-[640px]">
       <!-- Status Bar -->
-      <div class="bg-green-600 dark:bg-green-700 px-6 py-2 flex justify-between items-center">
+      <div class="bg-green-600 dark:bg-green-700 px-6 pt-8 pb-2 flex justify-between items-center flex-shrink-0">
         <div class="flex items-center gap-2">
-          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
           </svg>
-          <span class="text-white text-sm font-medium">WhatsApp Business</span>
+          <span class="text-white text-xs font-medium">WhatsApp Business</span>
         </div>
-        <div class="text-white text-xs">🔔 3</div>
+        <div class="text-white text-[10px]">🔔 3</div>
       </div>
 
       <!-- Chat Header -->
-      <div class="bg-green-600 dark:bg-green-700 px-4 py-3 flex items-center gap-3">
-        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-          <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <div class="bg-green-600 dark:bg-green-700 px-4 py-3 flex items-center gap-3 flex-shrink-0">
+        <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
           </svg>
         </div>
-        <div class="flex-1">
-          <div class="text-white font-semibold text-sm">RoeyTechDev Bot</div>
-          <div class="text-green-100 text-xs flex items-center gap-1">
-            <span class="w-2 h-2 bg-green-300 rounded-full animate-pulse"></span>
+        <div class="flex-1 min-w-0">
+          <div class="text-white font-semibold text-sm truncate">RoeyTechDev Bot</div>
+          <div class="text-green-100 text-[10px] flex items-center gap-1">
+            <span class="w-1.5 h-1.5 bg-green-300 rounded-full animate-pulse"></span>
             מחובר
           </div>
         </div>
       </div>
 
       <!-- Messages Container -->
-      <div id="chat-messages" class="h-96 overflow-y-auto px-4 py-4 space-y-3 scroll-smooth">
+      <div class="flex-1 overflow-y-auto px-3 py-3 space-y-2" id="chat-messages">
         <!-- Messages will be inserted here -->
       </div>
 
-      <!-- Typing Indicator -->
-      <div id="typing-indicator" class="px-4 pb-2 hidden">
-        <div class="inline-flex items-center gap-2 bg-white dark:bg-zinc-800 rounded-2xl rounded-bl-sm px-4 py-2 shadow-sm">
-          <div class="flex gap-1">
-            <div class="w-2 h-2 bg-stone-400 rounded-full animate-bounce" style="animation-delay: 0ms"></div>
-            <div class="w-2 h-2 bg-stone-400 rounded-full animate-bounce" style="animation-delay: 150ms"></div>
-            <div class="w-2 h-2 bg-stone-400 rounded-full animate-bounce" style="animation-delay: 300ms"></div>
+      <!-- Typing Indicators -->
+      <div id="typing-indicator-bot" class="px-3 pb-2 hidden">
+        <div class="inline-flex items-center gap-1 bg-white dark:bg-zinc-800 rounded-2xl rounded-bl-sm px-3 py-1.5 shadow-sm">
+          <div class="flex gap-0.5">
+            <div class="w-1.5 h-1.5 bg-stone-400 rounded-full animate-bounce" style="animation-delay: 0ms"></div>
+            <div class="w-1.5 h-1.5 bg-stone-400 rounded-full animate-bounce" style="animation-delay: 150ms"></div>
+            <div class="w-1.5 h-1.5 bg-stone-400 rounded-full animate-bounce" style="animation-delay: 300ms"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="typing-indicator-customer" class="px-3 pb-2 hidden justify-end">
+        <div class="inline-flex items-center gap-1 bg-green-600 rounded-2xl rounded-br-sm px-3 py-1.5 shadow-sm">
+          <div class="flex gap-0.5">
+            <div class="w-1.5 h-1.5 bg-white rounded-full animate-bounce" style="animation-delay: 0ms"></div>
+            <div class="w-1.5 h-1.5 bg-white rounded-full animate-bounce" style="animation-delay: 150ms"></div>
+            <div class="w-1.5 h-1.5 bg-white rounded-full animate-bounce" style="animation-delay: 300ms"></div>
           </div>
         </div>
       </div>
 
       <!-- Input Area -->
-      <div class="bg-white dark:bg-zinc-900 border-t border-stone-200 dark:border-zinc-800 px-4 py-3">
-        <div class="flex items-center gap-3">
-          <div class="flex-1 bg-stone-100 dark:bg-zinc-800 rounded-full px-4 py-2">
-            <div class="text-stone-400 dark:text-zinc-500 text-sm">הקלד הודעה...</div>
+      <div class="bg-white dark:bg-zinc-900 border-t border-stone-200 dark:border-zinc-800 px-3 py-2 flex-shrink-0">
+        <div class="flex items-center gap-2">
+          <div class="flex-1 bg-stone-100 dark:bg-zinc-800 rounded-full px-3 py-1.5">
+            <div class="text-stone-400 dark:text-zinc-500 text-xs">הקלד הודעה...</div>
           </div>
-          <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
-            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
               <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
             </svg>
           </div>
@@ -66,18 +79,22 @@
 </div>
 
 <style>
+  #whatsapp-demo {
+    transition: all 0.3s ease;
+  }
+
   .message-enter {
-    animation: messageSlideIn 0.3s ease-out;
+    animation: messageSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   @keyframes messageSlideIn {
     from {
       opacity: 0;
-      transform: translateY(10px);
+      transform: translateY(8px) scale(0.95);
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
     }
   }
 
@@ -104,7 +121,7 @@
 
   /* Custom scrollbar for chat */
   #chat-messages::-webkit-scrollbar {
-    width: 6px;
+    width: 4px;
   }
 
   #chat-messages::-webkit-scrollbar-track {
@@ -113,7 +130,7 @@
 
   #chat-messages::-webkit-scrollbar-thumb {
     background: #d6d3d1;
-    border-radius: 3px;
+    border-radius: 2px;
   }
 
   #chat-messages::-webkit-scrollbar-thumb:hover {
@@ -135,7 +152,8 @@
 
   let currentMessageIndex = 0;
   const chatMessages = document.getElementById('chat-messages');
-  const typingIndicator = document.getElementById('typing-indicator');
+  const typingIndicatorBot = document.getElementById('typing-indicator-bot');
+  const typingIndicatorCustomer = document.getElementById('typing-indicator-customer');
 
   function createMessageElement(message) {
     const messageDiv = document.createElement('div');
@@ -146,10 +164,11 @@
       : 'bg-white dark:bg-zinc-800 text-stone-900 dark:text-stone-100 rounded-2xl rounded-bl-sm';
 
     messageDiv.innerHTML = `
-      <div class="max-w-[80%] ${bubbleClass} px-4 py-2 shadow-sm">
-        <p class="text-sm leading-relaxed">${message.text}</p>
-        <div class="text-[10px] mt-1 ${message.type === 'customer' ? 'text-green-100' : 'text-stone-400 dark:text-zinc-500'}">
-          ${new Date().toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit' })}
+      <div class="max-w-[85%] ${bubbleClass} px-3 py-1.5 shadow-sm">
+        <p class="text-xs leading-relaxed">${message.text}</p>
+        <div class="text-[8px] mt-0.5 ${message.type === 'customer' ? 'text-green-100' : 'text-stone-400 dark:text-zinc-500'} flex items-center justify-end gap-0.5">
+          <span>${new Date().toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit' })}</span>
+          ${message.type === 'customer' ? '<svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>' : ''}
         </div>
       </div>
     `;
@@ -157,19 +176,27 @@
     return messageDiv;
   }
 
-  function showTyping() {
-    typingIndicator.classList.remove('hidden');
-    chatMessages.scrollTop = chatMessages.scrollHeight;
+  function showTyping(type) {
+    if (type === 'bot') {
+      typingIndicatorBot.classList.remove('hidden');
+    } else {
+      typingIndicatorCustomer.classList.remove('hidden');
+      typingIndicatorCustomer.classList.add('flex');
+    }
   }
 
-  function hideTyping() {
-    typingIndicator.classList.add('hidden');
+  function hideTyping(type) {
+    if (type === 'bot') {
+      typingIndicatorBot.classList.add('hidden');
+    } else {
+      typingIndicatorCustomer.classList.add('hidden');
+      typingIndicatorCustomer.classList.remove('flex');
+    }
   }
 
   function addMessage(message) {
     const messageElement = createMessageElement(message);
     chatMessages.appendChild(messageElement);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
   }
 
   async function playConversation() {
@@ -182,21 +209,17 @@
 
     const message = messages[currentMessageIndex];
 
-    // Show typing indicator for bot messages
-    if (message.type === 'bot') {
-      showTyping();
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      hideTyping();
-    } else {
-      // Small delay for customer messages
-      await new Promise(resolve => setTimeout(resolve, 500));
-    }
+    // Show typing indicator first
+    showTyping(message.type);
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    hideTyping(message.type);
 
     addMessage(message);
     currentMessageIndex++;
 
-    // Schedule next message
-    setTimeout(playConversation, 2000);
+    // Schedule next message with varied timing
+    const nextDelay = message.type === 'bot' ? 2500 : 2000;
+    setTimeout(playConversation, nextDelay);
   }
 
   // Start the conversation when the component loads
