@@ -1,57 +1,79 @@
 ---
 ---
 
-<section class="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-50 to-indigo-50 dark:from-slate-900 dark:to-slate-800">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <div class="text-center">
-      <h1 class="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6">
-        Save 20+ Hours Every Week with <span class="text-blue-600 dark:text-blue-400">AI Automation</span>
-      </h1>
-      <p class="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-8 max-w-3xl mx-auto">
-        Custom AI chatbots and automated CRMs that capture leads, respond to customers 24/7, and eliminate repetitive tasks
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition">
-          Book a Free Consultation
-        </a>
-        <a href="#demo" class="bg-white dark:bg-slate-800 border-2 border-blue-600 text-blue-600 dark:text-blue-400 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 dark:hover:bg-slate-700 transition">
-          Try Live Demo
-        </a>
+<section class="min-h-screen flex items-center relative overflow-hidden">
+  <!-- Background texture -->
+  <div class="absolute inset-0 opacity-30">
+    <div class="absolute top-20 left-10 w-72 h-72 bg-stone-300 dark:bg-zinc-800 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-stone-400 dark:bg-zinc-700 rounded-full blur-3xl"></div>
+  </div>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <!-- Left content - asymmetric -->
+      <div class="space-y-8">
+        <div class="inline-block">
+          <span class="text-sm font-semibold text-stone-500 dark:text-stone-400 uppercase tracking-wider">AI Automation</span>
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl font-bold text-stone-900 dark:text-stone-100 leading-tight tracking-tight">
+          Save 20+ Hours Every Week with
+          <span class="block mt-2 text-transparent bg-clip-text bg-linear-to-r from-stone-600 to-stone-400 dark:from-stone-300 dark:to-stone-500">
+            AI Automation
+          </span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl text-stone-600 dark:text-stone-300 leading-relaxed max-w-xl">
+          Custom AI chatbots and automated CRMs that capture leads, respond to customers 24/7, and eliminate repetitive tasks
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-stone-900 dark:bg-stone-100 text-white dark:text-stone-900 rounded-full font-semibold text-lg hover:bg-stone-800 dark:hover:bg-white transition-all transform hover:scale-105">
+            Book a Free Consultation
+          </a>
+          <a href="#demo" class="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-stone-300 dark:border-zinc-700 text-stone-700 dark:text-stone-300 rounded-full font-semibold text-lg hover:bg-stone-100 dark:hover:bg-zinc-900 transition-all">
+            Try Live Demo
+          </a>
+        </div>
       </div>
-      <div class="mt-12">
-        <div class="bg-white dark:bg-slate-800 rounded-xl shadow-2xl p-8 max-w-4xl mx-auto border border-slate-200 dark:border-slate-700">
-          <div class="flex items-center justify-between mb-4">
-            <div class="flex items-center space-x-2">
-              <div class="w-3 h-3 rounded-full bg-red-400"></div>
-              <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-              <div class="w-3 h-3 rounded-full bg-green-400"></div>
+      
+      <!-- Right content - visual interest -->
+      <div class="relative">
+        <div class="relative bg-white dark:bg-zinc-900 rounded-3xl shadow-2xl p-8 border border-stone-200 dark:border-zinc-800 transform rotate-1 hover:rotate-0 transition-transform duration-300">
+          <!-- Stats -->
+          <div class="grid grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <div class="text-4xl font-bold text-stone-900 dark:text-stone-100">24/7</div>
+              <div class="text-sm text-stone-500 dark:text-stone-400">Response Time</div>
             </div>
-            <div class="text-sm text-slate-500 dark:text-slate-400">AI Bot Dashboard</div>
+            <div class="space-y-2">
+              <div class="text-4xl font-bold text-stone-900 dark:text-stone-100">20+</div>
+              <div class="text-sm text-stone-500 dark:text-stone-400">Hours Saved</div>
+            </div>
+            <div class="space-y-2">
+              <div class="text-4xl font-bold text-stone-900 dark:text-stone-100">3x</div>
+              <div class="text-sm text-stone-500 dark:text-stone-400">More Leads</div>
+            </div>
+            <div class="space-y-2">
+              <div class="text-4xl font-bold text-stone-900 dark:text-stone-100">90%</div>
+              <div class="text-sm text-stone-500 dark:text-stone-400">Automation</div>
+            </div>
           </div>
-          <div class="space-y-3">
-            <div class="flex items-center space-x-3 p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
-              <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm">✓</div>
-              <div class="text-left flex-1">
-                <div class="text-sm text-slate-600 dark:text-slate-300">New lead captured from Instagram</div>
-                <div class="text-xs text-slate-500">2 seconds ago</div>
-              </div>
-            </div>
-            <div class="flex items-center space-x-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-              <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm">📧</div>
-              <div class="text-left flex-1">
-                <div class="text-sm text-slate-600 dark:text-slate-300">Appointment scheduled automatically</div>
-                <div class="text-xs text-slate-500">5 minutes ago</div>
-              </div>
-            </div>
-            <div class="flex items-center space-x-3 p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
-              <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-sm">💬</div>
-              <div class="text-left flex-1">
-                <div class="text-sm text-slate-600 dark:text-slate-300">15 customer conversations active</div>
-                <div class="text-xs text-slate-500">WhatsApp • Instagram • Facebook</div>
-              </div>
+          
+          <!-- Simple indicator -->
+          <div class="mt-8 pt-6 border-t border-stone-200 dark:border-zinc-800">
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-stone-500 dark:text-stone-400">Live automation status</span>
+              <span class="flex items-center text-green-600 dark:text-green-400 font-medium">
+                <span class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+                Active
+              </span>
             </div>
           </div>
         </div>
+        
+        <!-- Decorative element -->
+        <div class="absolute -bottom-4 -right-4 w-full h-full bg-stone-200 dark:bg-zinc-800 rounded-3xl -z-10"></div>
       </div>
     </div>
   </div>
