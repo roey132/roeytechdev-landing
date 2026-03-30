@@ -1,0 +1,75 @@
+Global Elements (Site-Wide)
+
+    Persistent Navigation Bar: Logo (left), Anchor links to Services/Process/Case Studies (center), "Book a Call" button (right).
+
+    Floating Action Button: A sticky WhatsApp icon in the bottom corner that opens a direct chat with your own automated lead-qualification bot.
+
+Section 1: The Hero (The First Impression)
+
+    The Hook: A single, powerful headline stating the ultimate benefit of your automation services (focusing on time saved or revenue gained).
+
+    The Sub-hook: A brief explanation of the mechanism (e.g., custom AI chatbots and automated CRMs for modern businesses).
+
+    Primary CTA: A high-contrast button to schedule a discovery call or interact with a live demo bot.
+
+    Visual Asset: A clean dashboard mockup, a dynamic graphic showing apps connecting (like WhatsApp, Instagram, and a database), or a short video of a bot in action.
+
+Section 2: The "Pain" Identification (Why are they here?)
+
+    Structure: A 3-column grid or a sleek checklist.
+
+    Content Focus: Highlight the exact symptoms of a business lacking automation.
+
+        Losing leads because of slow response times on social media.
+
+        Wasting hours on manual data entry into spreadsheets.
+
+        Disorganized customer tracking and missed follow-ups.
+
+Section 3: Core Solutions (What you build)
+
+    Structure: Distinct feature blocks, ideally with a small icon or animation for each.
+
+    Service 1: Smart Chatbot Development. Highlight platforms relevant to your market (WhatsApp, Instagram, Facebook) for 24/7 lead capture and customer service.
+
+    Service 2: Custom CRM Architecture. Emphasize building lightweight, highly effective systems (like Airtable setups) that manage data automatically.
+
+    Service 3: Workflow Automation. Explain how you connect their existing tools behind the scenes (using platforms like n8n or Make) to eliminate repetitive tasks.
+
+Section 4: The Lead Magnet (Free Value)
+
+    Structure: A visually distinct banner section.
+
+    The Offer: Give away a high-value resource in exchange for an email or WhatsApp opt-in. A perfect fit here would be a downloadable guide or a mini-course (e.g., "How to build your own AI CRM in 10 minutes").
+
+    The Goal: Build your audience and capture leads who aren't quite ready to buy yet but are interested in tech solutions.
+
+Section 5: Case Studies & Social Proof (Trust Building)
+
+    Structure: A carousel or a grid of success stories.
+
+    Focus: Do not focus on the code; focus on the business result.
+
+    Examples to feature: * Showcase a real estate or hospitality flow (like a WhatsApp bot managing villa rental bookings and FAQs).
+
+        Showcase an e-commerce or service business where an Instagram bot increased ad conversion rates.
+
+    Metrics: Include specific numbers if possible (hours saved, response time reduced).
+
+Section 6: The Process (Setting Expectations)
+
+    Structure: A simple, horizontal 4-step timeline.
+
+    Step 1: Discovery. Mapping the client's bottlenecks.
+
+    Step 2: Strategy. Designing the bot flows and CRM architecture.
+
+    Step 3: Build & Integrate. The actual development phase.
+
+    Step 4: Handover & Support. Training the client to use the new system.
+
+Section 7: Final CTA & Footer
+
+    The Final Push: A large, clean section reiterating the main value proposition with a final "Book a Consultation" calendar embed.
+
+    Footer Links: Privacy policy, terms of service, contact email, and links to your professional social media or WhatsApp community group.

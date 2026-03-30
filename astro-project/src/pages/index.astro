@@ -1,0 +1,442 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+---
+
+<Layout title="RoeyTechDev - Automation Solutions for Modern Business">
+  <Navbar />
+  
+  <main class="pt-16">
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-900 dark:to-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6">
+            Save 20+ Hours Every Week with <span class="text-blue-600 dark:text-blue-400">AI Automation</span>
+          </h1>
+          <p class="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-8 max-w-3xl mx-auto">
+            Custom AI chatbots and automated CRMs that capture leads, respond to customers 24/7, and eliminate repetitive tasks
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition">
+              Book a Free Consultation
+            </a>
+            <a href="#demo" class="bg-white dark:bg-slate-800 border-2 border-blue-600 text-blue-600 dark:text-blue-400 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 dark:hover:bg-slate-700 transition">
+              Try Live Demo
+            </a>
+          </div>
+          <div class="mt-12">
+            <div class="bg-white dark:bg-slate-800 rounded-xl shadow-2xl p-8 max-w-4xl mx-auto border border-slate-200 dark:border-slate-700">
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center space-x-2">
+                  <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                  <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                  <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                </div>
+                <div class="text-sm text-slate-500 dark:text-slate-400">AI Bot Dashboard</div>
+              </div>
+              <div class="space-y-3">
+                <div class="flex items-center space-x-3 p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                  <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm">✓</div>
+                  <div class="text-left flex-1">
+                    <div class="text-sm text-slate-600 dark:text-slate-300">New lead captured from Instagram</div>
+                    <div class="text-xs text-slate-500">2 seconds ago</div>
+                  </div>
+                </div>
+                <div class="flex items-center space-x-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                  <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm">📧</div>
+                  <div class="text-left flex-1">
+                    <div class="text-sm text-slate-600 dark:text-slate-300">Appointment scheduled automatically</div>
+                    <div class="text-xs text-slate-500">5 minutes ago</div>
+                  </div>
+                </div>
+                <div class="flex items-center space-x-3 p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                  <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-sm">💬</div>
+                  <div class="text-left flex-1">
+                    <div class="text-sm text-slate-600 dark:text-slate-300">15 customer conversations active</div>
+                    <div class="text-xs text-slate-500">WhatsApp • Instagram • Facebook</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="py-20 bg-white dark:bg-slate-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+            Sound Familiar?
+          </h2>
+          <p class="text-xl text-slate-600 dark:text-slate-300">
+            These problems cost businesses thousands in lost revenue every month
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-red-50 dark:bg-red-900/20 p-8 rounded-xl border border-red-200 dark:border-red-800">
+            <div class="text-4xl mb-4">⏰</div>
+            <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">
+              Slow Response Times
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300">
+              Losing leads because you can't respond to social media inquiries fast enough. Every minute costs you potential customers.
+            </p>
+          </div>
+          
+          <div class="bg-orange-50 dark:bg-orange-900/20 p-8 rounded-xl border border-orange-200 dark:border-orange-800">
+            <div class="text-4xl mb-4">📊</div>
+            <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">
+              Manual Data Entry Hell
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300">
+              Wasting hours every day copying information from emails and messages into spreadsheets. It's tedious and error-prone.
+            </p>
+          </div>
+          
+          <div class="bg-yellow-50 dark:bg-yellow-900/20 p-8 rounded-xl border border-yellow-200 dark:border-yellow-800">
+            <div class="text-4xl mb-4">🔄</div>
+            <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">
+              Missed Follow-ups
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300">
+              Disorganized customer tracking means you forget to follow up. Leads go cold and opportunities slip through the cracks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="services" class="py-20 bg-slate-50 dark:bg-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+            Automation Solutions That Actually Work
+          </h2>
+          <p class="text-xl text-slate-600 dark:text-slate-300">
+            Custom-built systems designed for your specific business needs
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white dark:bg-slate-900 p-8 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700">
+            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">
+              Smart Chatbot Development
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300 mb-4">
+              24/7 AI-powered chatbots for WhatsApp, Instagram, and Facebook that capture leads, answer FAQs, and qualify customers automatically.
+            </p>
+            <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Instant lead capture</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Automated qualification</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Seamless handoff to humans</li>
+            </ul>
+          </div>
+          
+          <div class="bg-white dark:bg-slate-900 p-8 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700">
+            <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">
+              Custom CRM Architecture
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300 mb-4">
+              Lightweight, powerful CRM systems built with tools like Airtable that organize your customer data and automate follow-ups.
+            </p>
+            <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Centralized customer data</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Automated follow-ups</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Easy to use interface</li>
+            </ul>
+          </div>
+          
+          <div class="bg-white dark:bg-slate-900 p-8 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700">
+            <div class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">
+              Workflow Automation
+            </h3>
+            <p class="text-slate-600 dark:text-slate-300 mb-4">
+              Connect your existing tools behind the scenes using platforms like n8n or Make to eliminate repetitive tasks forever.
+            </p>
+            <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Email automation</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Social media integration</li>
+              <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Custom workflow design</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lead Magnet Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-700 dark:to-indigo-700">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-12 border border-white/20">
+          <div class="text-5xl mb-6">🎁</div>
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            Free Guide: Build Your Own AI CRM in 10 Minutes
+          </h2>
+          <p class="text-xl text-blue-100 mb-8">
+            Learn exactly how to set up a simple AI-powered CRM system that captures leads and automates follow-ups
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <input 
+              type="email" 
+              placeholder="Enter your email" 
+              class="flex-1 px-6 py-4 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-white"
+            />
+            <button class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition">
+              Get the Guide
+            </button>
+          </div>
+          <p class="text-sm text-blue-100 mt-4">
+            No spam, just valuable automation insights
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="case-studies" class="py-20 bg-white dark:bg-slate-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+            Real Results for Real Businesses
+          </h2>
+          <p class="text-xl text-slate-600 dark:text-slate-300">
+            See how automation has transformed businesses like yours
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-xl border border-slate-200 dark:border-slate-700">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl mr-4">
+                VR
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-slate-900 dark:text-white">Villa Rentals Company</h3>
+                <p class="text-sm text-slate-500 dark:text-slate-400">Hospitality • 50+ Properties</p>
+              </div>
+            </div>
+            <p class="text-slate-600 dark:text-slate-300 mb-6">
+              "Our WhatsApp bot now handles 90% of guest inquiries automatically. Booking inquiries increased by 40% and we saved 25 hours per week."
+            </p>
+            <div class="grid grid-cols-3 gap-4 text-center">
+              <div>
+                <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">25+</div>
+                <div class="text-sm text-slate-500 dark:text-slate-400">Hours Saved/Week</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">40%</div>
+                <div class="text-sm text-slate-500 dark:text-slate-400">More Inquiries</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">90%</div>
+                <div class="text-sm text-slate-500 dark:text-slate-400">Automated Responses</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-slate-50 dark:bg-slate-800 p-8 rounded-xl border border-slate-200 dark:border-slate-700">
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center text-white font-bold text-xl mr-4">
+                EC
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-slate-900 dark:text-white">E-commerce Brand</h3>
+                <p class="text-sm text-slate-500 dark:text-slate-400">Retail • Instagram Ads</p>
+              </div>
+            </div>
+            <p class="text-slate-600 dark:text-slate-300 mb-6">
+              "The Instagram automation bot increased our ad conversion rate by 35%. Customer questions are answered instantly, even at 3 AM."
+            </p>
+            <div class="grid grid-cols-3 gap-4 text-center">
+              <div>
+                <div class="text-2xl font-bold text-purple-600 dark:text-purple-400">35%</div>
+                <div class="text-sm text-slate-500 dark:text-slate-400">Higher Conversion</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-purple-600 dark:text-purple-400">24/7</div>
+                <div class="text-sm text-slate-500 dark:text-slate-400">Customer Support</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-purple-600 dark:text-purple-400">3x</div>
+                <div class="text-sm text-slate-500 dark:text-slate-400">ROI in 2 Months</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-20 bg-slate-50 dark:bg-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+            Simple 4-Step Process
+          </h2>
+          <p class="text-xl text-slate-600 dark:text-slate-300">
+            From chaos to automated bliss in weeks, not months
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="w-20 h-20 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span class="text-3xl font-bold text-blue-600 dark:text-blue-400">1</span>
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">Discovery</h3>
+            <p class="text-slate-600 dark:text-slate-300">
+              We map your bottlenecks and identify the biggest opportunities for automation
+            </p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-20 h-20 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span class="text-3xl font-bold text-purple-600 dark:text-purple-400">2</span>
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">Strategy</h3>
+            <p class="text-slate-600 dark:text-slate-300">
+              We design custom bot flows and CRM architecture tailored to your business
+            </p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span class="text-3xl font-bold text-green-600 dark:text-green-400">3</span>
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">Build & Integrate</h3>
+            <p class="text-slate-600 dark:text-slate-300">
+              We build and connect all the components to create your automated system
+            </p>
+          </div>
+          
+          <div class="text-center">
+            <div class="w-20 h-20 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span class="text-3xl font-bold text-orange-600 dark:text-orange-400">4</span>
+            </div>
+            <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-3">Handover & Support</h3>
+            <p class="text-slate-600 dark:text-slate-300">
+              We train your team and provide ongoing support to ensure success
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-slate-900">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">
+          Ready to Stop Wasting Time on Repetitive Tasks?
+        </h2>
+        <p class="text-xl text-slate-600 dark:text-slate-300 mb-8">
+          Book a free 30-minute consultation to see how automation can transform your business
+        </p>
+        
+        <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-8 border border-slate-200 dark:border-slate-700 mb-8">
+          <div class="text-sm text-slate-500 dark:text-slate-400 mb-4">Select a time that works for you</div>
+          <div class="grid grid-cols-3 gap-4 max-w-md mx-auto">
+            <button class="bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg p-4 hover:border-blue-500 dark:hover:border-blue-400 transition">
+              <div class="font-semibold text-slate-900 dark:text-white">Mon</div>
+              <div class="text-sm text-slate-500 dark:text-slate-400">Mar 31</div>
+            </button>
+            <button class="bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg p-4 hover:border-blue-500 dark:hover:border-blue-400 transition">
+              <div class="font-semibold text-slate-900 dark:text-white">Tue</div>
+              <div class="text-sm text-slate-500 dark:text-slate-400">Apr 1</div>
+            </button>
+            <button class="bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg p-4 hover:border-blue-500 dark:hover:border-blue-400 transition">
+              <div class="font-semibold text-slate-900 dark:text-white">Wed</div>
+              <div class="text-sm text-slate-500 dark:text-slate-400">Apr 2</div>
+            </button>
+          </div>
+        </div>
+        
+        <a href="mailto:contact@roeytechdev.com" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition">
+          Book Your Free Consultation
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 dark:bg-black py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-white font-semibold mb-4">RoeyTechDev</h3>
+            <p class="text-slate-400 text-sm">
+              AI automation solutions for modern businesses
+            </p>
+          </div>
+          
+          <div>
+            <h4 class="text-white font-semibold mb-4">Services</h4>
+            <ul class="space-y-2 text-slate-400 text-sm">
+              <li><a href="#services" class="hover:text-white transition">Chatbot Development</a></li>
+              <li><a href="#services" class="hover:text-white transition">CRM Architecture</a></li>
+              <li><a href="#services" class="hover:text-white transition">Workflow Automation</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-white font-semibold mb-4">Company</h4>
+            <ul class="space-y-2 text-slate-400 text-sm">
+              <li><a href="#case-studies" class="hover:text-white transition">Case Studies</a></li>
+              <li><a href="#process" class="hover:text-white transition">Our Process</a></li>
+              <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-white font-semibold mb-4">Connect</h4>
+            <ul class="space-y-2 text-slate-400 text-sm">
+              <li><a href="mailto:contact@roeytechdev.com" class="hover:text-white transition">Email Us</a></li>
+              <li><a href="#" class="hover:text-white transition">WhatsApp Community</a></li>
+              <li><a href="#" class="hover:text-white transition">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="border-t border-slate-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p class="text-slate-400 text-sm">
+            © 2025 RoeyTechDev. All rights reserved.
+          </p>
+          <div class="flex space-x-6 mt-4 md:mt-0">
+            <a href="#" class="text-slate-400 hover:text-white text-sm transition">Privacy Policy</a>
+            <a href="#" class="text-slate-400 hover:text-white text-sm transition">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a 
+      href="https://wa.me/1234567890" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all z-50"
+      aria-label="Chat on WhatsApp"
+    >
+      <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+  </main>
+</Layout>
