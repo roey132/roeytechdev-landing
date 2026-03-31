@@ -1,42 +1,104 @@
 ---
 ---
 
-<section class="py-24 bg-stone-900 dark:bg-zinc-900 relative overflow-hidden">
-  <!-- Background pattern -->
-  <div class="absolute inset-0 opacity-10">
-    <div class="absolute top-0 left-0 w-96 h-96 bg-stone-600 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 right-0 w-96 h-96 bg-stone-700 rounded-full blur-3xl"></div>
-  </div>
-  
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-    <div class="bg-stone-800 dark:bg-zinc-950 rounded-3xl p-12 md:p-16 border border-stone-700 dark:border-zinc-800">
-      <div class="w-16 h-16 bg-stone-700 dark:bg-zinc-900 rounded-2xl flex items-center justify-center mx-auto mb-8">
-        <svg class="w-8 h-8 text-stone-300 dark:text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-        </svg>
+<!-- CONCEPT 2: PROBLEM-SOLUTION LEAD MAGNET -->
+<section class="py-24 bg-gradient-to-br from-stone-100 via-stone-50 to-green-50/30 dark:from-zinc-950 dark:via-zinc-900 dark:to-green-950/10">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white dark:bg-zinc-900 rounded-3xl shadow-xl border border-stone-100 dark:border-zinc-800 overflow-hidden">
+      <div class="p-10 md:p-12">
+        
+        <div class="text-center mb-10">
+          <div class="inline-flex items-center gap-2 bg-green-100 dark:bg-green-900/30 px-4 py-2 rounded-full text-sm font-medium text-green-700 dark:text-green-400 mb-6">
+            <span>🎁</span>
+            <span>מדריך חינמי</span>
+          </div>
+          
+          <h2 class="text-3xl md:text-4xl font-bold text-stone-900 dark:text-stone-100 mb-4">
+            איך תדע אם אוטומציה באמת תעזור לך?
+          </h2>
+          
+          <p class="text-lg text-stone-600 dark:text-stone-300 max-w-2xl mx-auto">
+            מדריך שיעזור לך להבין אם אוטומציה היא הפתרון בשבילך — 
+            <span class="font-medium text-stone-700 dark:text-stone-200">לפני שאתה משקיע כסף או זמן</span>
+          </p>
+        </div>
+        
+        <!-- What's inside -->
+        <div class="grid md:grid-cols-2 gap-6 mb-10">
+          <div class="bg-stone-50 dark:bg-zinc-800 rounded-xl p-5">
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">📝</span>
+              <div>
+                <h3 class="font-bold text-stone-900 dark:text-stone-100 mb-1">צ'קליסט האתגרים</h3>
+                <p class="text-sm text-stone-600 dark:text-stone-300">10 שאלות שיעזרו לך להבין איפה אתה מבזבז זמן</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-stone-50 dark:bg-zinc-800 rounded-xl p-5">
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">💡</span>
+              <div>
+                <h3 class="font-bold text-stone-900 dark:text-stone-100 mb-1">5 סימנים שאתה מוכן</h3>
+                <p class="text-sm text-stone-600 dark:text-stone-300">איך לדעת שהעסק שלך בשל לאוטומציה</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-stone-50 dark:bg-zinc-800 rounded-xl p-5">
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">🎯</span>
+              <div>
+                <h3 class="font-bold text-stone-900 dark:text-stone-100 mb-1">המקומות שכדאי לאטמט</h3>
+                <p class="text-sm text-stone-600 dark:text-stone-300">והמקומות שבהם עדיף להשאיר אדם</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-stone-50 dark:bg-zinc-800 rounded-xl p-5">
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">💬</span>
+              <div>
+                <h3 class="font-bold text-stone-900 dark:text-stone-100 mb-1">שאלות לשאול ספקים</h3>
+                <p class="text-sm text-stone-600 dark:text-stone-300">מה לבדוק לפני שבוחרים מישהו לעבוד איתו</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Form -->
+        <form class="max-w-lg mx-auto">
+          <div class="space-y-4">
+            <input 
+              type="email" 
+              placeholder="האימייל שלך"
+              class="w-full px-6 py-4 rounded-xl bg-stone-50 dark:bg-zinc-800 border border-stone-200 dark:border-zinc-700 text-stone-900 dark:text-stone-100 placeholder-stone-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-green-500 transition-all text-center"
+            />
+            <button 
+              type="submit"
+              class="w-full bg-green-600 hover:bg-green-700 text-white px-6 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2"
+            >
+              שלח לי את המדריך
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+            </button>
+          </div>
+        </form>
+        
+        <!-- Trust -->
+        <p class="text-center text-sm text-stone-400 dark:text-stone-500 mt-6">
+          💌 נשלח ישירות למייל. בלי ספאם, בלי התחייבויות.
+        </p>
       </div>
-      
-      <h2 class="text-3xl md:text-4xl font-bold text-stone-100 dark:text-stone-100 mb-4">
-        מדריך חינם: בנה CRM AI משלך ב-10 דקות
-      </h2>
-      <p class="text-xl text-stone-300 dark:text-stone-400 mb-10 max-w-2xl mx-auto">
-        למד בדיוק איך להקים מערכת CRM מונעת AI פשוטה שלוכדת לידים ומאוטמטת מעקבים
+    </div>
+    
+    <!-- Testimonial -->
+    <div class="mt-8 text-center">
+      <p class="text-stone-500 dark:text-stone-400 text-sm italic max-w-md mx-auto">
+        "המדריך הזה עזר לי להבין שאני לא צריך לאטמט הכל — רק את מה שבאמת חשוב. חסך לי המון זמן וכסף."
       </p>
-      
-      <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
-        <input 
-          type="email" 
-          placeholder="הכנס את האימייל שלך" 
-          class="flex-1 px-6 py-4 rounded-xl bg-stone-900 dark:bg-zinc-900 border border-stone-600 dark:border-zinc-700 text-stone-100 dark:text-stone-100 placeholder-stone-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-stone-500 dark:focus:ring-zinc-600"
-        />
-        <button class="bg-stone-100 dark:bg-stone-200 text-stone-900 dark:text-stone-900 px-8 py-4 rounded-xl font-semibold hover:bg-stone-200 dark:hover:bg-white transition-all whitespace-nowrap">
-          קבל את המדריך
-        </button>
-      </div>
-      
-      <p class="text-sm text-stone-400 dark:text-zinc-500 mt-6">
-        ללא ספאם, רק תובנות אוטומציה שימושיות
-      </p>
+      <p class="text-stone-400 dark:text-stone-500 text-xs mt-2">— יעל, מנהלת קליניקה</p>
     </div>
   </div>
 </section>
