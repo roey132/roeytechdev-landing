@@ -1,49 +1,150 @@
 ---
-import WhatsAppDemo from './WhatsAppDemo.astro';
 ---
 
-<section class="min-h-screen flex items-center relative overflow-hidden">
-  <!-- Background texture -->
-  <div class="absolute inset-0 opacity-30">
-    <div class="absolute top-20 left-10 w-72 h-72 bg-green-200 dark:bg-green-900/30 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-20 right-10 w-96 h-96 bg-green-300 dark:bg-green-800/30 rounded-full blur-3xl"></div>
+<!-- CONCEPT 1: RESULTS-FIRST HERO -->
+<section class="min-h-screen flex items-center relative overflow-hidden bg-stone-50 dark:bg-zinc-950">
+  <!-- Animated background -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-20 left-10 w-96 h-96 bg-green-100 dark:bg-green-900/20 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-20 right-10 w-80 h-80 bg-green-200 dark:bg-green-800/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
   </div>
-  
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
-      <!-- Left content - asymmetric -->
-      <div class="space-y-8">
-        <div class="inline-block">
-          <span class="text-sm font-semibold text-green-600 dark:text-green-400 uppercase tracking-wider">אוטומציה AI</span>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+    <div class="text-center space-y-8">
+      <!-- Outcome badge -->
+      <div class="inline-flex items-center gap-2 bg-green-100 dark:bg-green-900/30 px-4 py-2 rounded-full">
+        <span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
+        <span class="text-sm font-semibold text-green-700 dark:text-green-400">תוצאות מוכחות מלקוחות אמיתיים</span>
+      </div>
+
+      <!-- Main headline - pure outcome -->
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-stone-900 dark:text-stone-100 leading-tight tracking-tight">
+        חסכו
+        <span class="text-transparent bg-clip-text bg-gradient-to-l from-green-500 to-green-600 dark:from-green-400 dark:to-green-500">
+          25+ שעות
+        </span>
+        בשבוע
+      </h1>
+
+      <!-- Supporting outcome -->
+      <p class="text-2xl md:text-3xl text-stone-600 dark:text-stone-300 max-w-3xl mx-auto leading-relaxed">
+        עסקים כמו שלך מקבלים <span class="text-green-600 dark:text-green-400 font-bold">פי 3 יותר לידים</span> וחוסכים זמן יקר עם מערכת שעובדת 24/7
+      </p>
+
+      <!-- Key metrics row -->
+      <div class="flex flex-wrap justify-center gap-8 md:gap-16 py-8">
+        <div class="text-center">
+          <div class="text-5xl md:text-6xl font-black text-green-600 dark:text-green-400">87%</div>
+          <div class="text-stone-500 dark:text-stone-400 mt-2">פחות זמן תגובה</div>
         </div>
-        
-        <h1 class="text-5xl md:text-7xl font-bold text-stone-900 dark:text-stone-100 leading-tight tracking-tight">
-          חסון יותר מ-20 שעות בשבוע עם
-          <span class="block mt-2 text-transparent bg-clip-text bg-linear-to-r from-green-600 to-green-400 dark:from-green-400 dark:to-green-600">
-            אוטומציית AI
-          </span>
-        </h1>
-        
-        <p class="text-xl md:text-2xl text-stone-600 dark:text-stone-300 leading-relaxed max-w-xl">
-          צ'אטבוט AI מותאם אישית ומערכת CRM אוטומטית שלוכדים לידים, מגיבים ללקוחות 24/7 ומבטלים משימות חוזרות
-        </p>
-        
-        <div class="flex flex-col sm:flex-row gap-4 pt-4">
-          <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-green-600 hover:bg-green-700 text-white rounded-full font-semibold text-lg transition-all transform hover:scale-105">
-            קבע פגישה חינמית
-          </a>
-          <a href="#demo" class="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-green-200 dark:border-green-800 text-green-700 dark:text-green-300 rounded-full font-semibold text-lg hover:bg-green-50 dark:hover:bg-green-900/20 transition-all">
-            נסה הדגמה חיה
-          </a>
+        <div class="text-center">
+          <div class="text-5xl md:text-6xl font-black text-green-600 dark:text-green-400">3x</div>
+          <div class="text-stone-500 dark:text-stone-400 mt-2">יותר לידים</div>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl md:text-6xl font-black text-green-600 dark:text-green-400">24/7</div>
+          <div class="text-stone-500 dark:text-stone-400 mt-2">זמינות מלאה</div>
         </div>
       </div>
-      
-      <!-- Right content - WhatsApp demo -->
-      <div class="relative">
-        <WhatsAppDemo />
-        
-        <!-- Decorative element -->
-        <div class="absolute -bottom-4 -right-4 w-full h-full bg-green-100 dark:bg-green-900/30 rounded-3xl -z-10"></div>
+
+      <!-- CTA buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+        <a href="#contact" class="inline-flex items-center justify-center px-10 py-5 bg-green-600 hover:bg-green-700 text-white rounded-full font-bold text-xl transition-all transform hover:scale-105 shadow-lg shadow-green-600/30">
+          ראה כמה תחסוך
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </a>
+        <a href="#results" class="inline-flex items-center justify-center px-10 py-5 bg-white dark:bg-zinc-900 border-2 border-stone-200 dark:border-zinc-700 text-stone-700 dark:text-stone-300 rounded-full font-bold text-xl hover:border-green-300 dark:hover:border-green-700 transition-all">
+          תוצאות אמיתיות
+        </a>
+      </div>
+
+      <!-- Trust indicators -->
+      <div class="pt-12">
+        <p class="text-sm text-stone-400 dark:text-stone-500 mb-4">מומחים בתוצאות עבור:</p>
+        <div class="flex flex-wrap justify-center gap-4 text-stone-400 dark:text-stone-600">
+          <span class="px-4 py-2 bg-stone-100 dark:bg-zinc-900 rounded-lg">נדל"ן</span>
+          <span class="px-4 py-2 bg-stone-100 dark:bg-zinc-900 rounded-lg">איקומרס</span>
+          <span class="px-4 py-2 bg-stone-100 dark:bg-zinc-900 rounded-lg">שירותים מקצועיים</span>
+          <span class="px-4 py-2 bg-stone-100 dark:bg-zinc-900 rounded-lg">אירוח ותיירות</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Before/After Section -->
+<section id="results" class="py-24 bg-stone-100 dark:bg-zinc-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-stone-900 dark:text-stone-100 mb-6">
+        המעבר מ<span class="text-red-500">כאוס</span> ל<span class="text-green-500">שליטה</span>
+      </h2>
+      <p class="text-xl text-stone-600 dark:text-stone-300">
+        ראו איך העסק שלכם משתנה תוך שבועות
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Before -->
+      <div class="bg-white dark:bg-zinc-950 rounded-3xl p-8 border-2 border-red-200 dark:border-red-900/50">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-stone-900 dark:text-stone-100">בלי מערכת</h3>
+        </div>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="text-red-500 mt-1">✗</span>
+            <span class="text-stone-600 dark:text-stone-300">לידים מתקררים בזמן שאתם לא זמינים</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-red-500 mt-1">✗</span>
+            <span class="text-stone-600 dark:text-stone-300">שעות על שעות על תשובות לשאלות חוזרות</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-red-500 mt-1">✗</span>
+            <span class="text-stone-600 dark:text-stone-300">לקוחות הולכים למתחרים שעונים מהר יותר</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-red-500 mt-1">✗</span>
+            <span class="text-stone-600 dark:text-stone-300">מעקב לקוחות באקסל ובראש</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- After -->
+      <div class="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-3xl p-8 border-2 border-green-300 dark:border-green-700/50">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-12 h-12 bg-green-200 dark:bg-green-800/50 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-stone-900 dark:text-stone-100">עם RoeyTech</h3>
+        </div>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="text-green-500 mt-1">✓</span>
+            <span class="text-stone-700 dark:text-stone-200 font-medium">כל ליד מתקבל ומסווג מיידית, 24/7</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-green-500 mt-1">✓</span>
+            <span class="text-stone-700 dark:text-stone-200 font-medium">תשובות אוטומטיות ל-80% מהשאלות</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-green-500 mt-1">✓</span>
+            <span class="text-stone-700 dark:text-stone-200 font-medium">זמן תגובה ממוצע: פחות מדקה</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-green-500 mt-1">✓</span>
+            <span class="text-stone-700 dark:text-stone-200 font-medium">מערכת CRM שמתעדת הכל אוטומטית</span>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
