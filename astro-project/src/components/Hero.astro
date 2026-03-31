@@ -1,49 +1,112 @@
 ---
-import WhatsAppDemo from './WhatsAppDemo.astro';
 ---
 
-<section class="min-h-screen flex items-center relative overflow-hidden">
-  <!-- Background texture -->
-  <div class="absolute inset-0 opacity-30">
-    <div class="absolute top-20 left-10 w-72 h-72 bg-green-200 dark:bg-green-900/30 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-20 right-10 w-96 h-96 bg-green-300 dark:bg-green-800/30 rounded-full blur-3xl"></div>
+<!-- CONCEPT 2: PROBLEM-SOLUTION HERO -->
+<section class="min-h-screen flex items-center relative overflow-hidden bg-gradient-to-b from-stone-50 to-stone-100 dark:from-zinc-950 dark:to-zinc-900">
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-green-100/50 dark:bg-green-900/10 rounded-full blur-3xl"></div>
   </div>
-  
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
-      <!-- Left content - asymmetric -->
-      <div class="space-y-8">
-        <div class="inline-block">
-          <span class="text-sm font-semibold text-green-600 dark:text-green-400 uppercase tracking-wider">אוטומציה AI</span>
-        </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+    <div class="max-w-4xl mx-auto text-center space-y-10">
+      <!-- Opening question -->
+      <div class="space-y-6">
+        <p class="text-lg text-stone-500 dark:text-stone-400">בואו נדבר בכנות.</p>
         
-        <h1 class="text-5xl md:text-7xl font-bold text-stone-900 dark:text-stone-100 leading-tight tracking-tight">
-          חסון יותר מ-20 שעות בשבוע עם
-          <span class="block mt-2 text-transparent bg-clip-text bg-linear-to-r from-green-600 to-green-400 dark:from-green-400 dark:to-green-600">
-            אוטומציית AI
-          </span>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-stone-900 dark:text-stone-100 leading-tight">
+          מרגיש שהעסק <span class="text-green-600 dark:text-green-400">בורח לך</span> בין הידיים?
         </h1>
         
-        <p class="text-xl md:text-2xl text-stone-600 dark:text-stone-300 leading-relaxed max-w-xl">
-          צ'אטבוט AI מותאם אישית ומערכת CRM אוטומטית שלוכדים לידים, מגיבים ללקוחות 24/7 ומבטלים משימות חוזרות
+        <p class="text-2xl md:text-3xl text-stone-600 dark:text-stone-300 leading-relaxed">
+          אתה לא לבד. בעלי עסקים רבים מרגישים בדיוק אותו הדבר.
+        </p>
+      </div>
+
+      <!-- Relatable struggles -->
+      <div class="bg-white dark:bg-zinc-900 rounded-3xl p-8 md:p-12 shadow-xl border border-stone-200 dark:border-zinc-800">
+        <p class="text-xl text-stone-700 dark:text-stone-200 mb-8 font-medium">
+          האם אתה מזהה את עצמך כאן?
         </p>
         
-        <div class="flex flex-col sm:flex-row gap-4 pt-4">
-          <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-green-600 hover:bg-green-700 text-white rounded-full font-semibold text-lg transition-all transform hover:scale-105">
-            קבע פגישה חינמית
-          </a>
-          <a href="#demo" class="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-green-200 dark:border-green-800 text-green-700 dark:text-green-300 rounded-full font-semibold text-lg hover:bg-green-50 dark:hover:bg-green-900/20 transition-all">
-            נסה הדגמה חיה
-          </a>
+        <div class="grid md:grid-cols-2 gap-6 text-right">
+          <div class="flex items-start gap-4 p-4 bg-stone-50 dark:bg-zinc-800 rounded-2xl">
+            <span class="text-2xl">😓</span>
+            <p class="text-stone-600 dark:text-stone-300">לידים מתקררים לפני שמספיקים לחזור אליהם</p>
+          </div>
+          <div class="flex items-start gap-4 p-4 bg-stone-50 dark:bg-zinc-800 rounded-2xl">
+            <span class="text-2xl">😩</span>
+            <p class="text-stone-600 dark:text-stone-300">עונים על אותן שאלות שוב ושוב</p>
+          </div>
+          <div class="flex items-start gap-4 p-4 bg-stone-50 dark:bg-zinc-800 rounded-2xl">
+            <span class="text-2xl">😰</span>
+            <p class="text-stone-600 dark:text-stone-300">הלקוחות מקבלים תשובות רק בשעות העבודה</p>
+          </div>
+          <div class="flex items-start gap-4 p-4 bg-stone-50 dark:bg-zinc-800 rounded-2xl">
+            <span class="text-2xl">😣</span>
+            <p class="text-stone-600 dark:text-stone-300">מרגיש שהמתחרים מקדימים אותך</p>
+          </div>
         </div>
       </div>
-      
-      <!-- Right content - WhatsApp demo -->
-      <div class="relative">
-        <WhatsAppDemo />
+
+      <!-- Empathetic transition -->
+      <div class="space-y-6">
+        <p class="text-2xl text-stone-700 dark:text-stone-200">
+          זה לא אשמתך. פשוט <span class="font-bold text-green-600 dark:text-green-400">אי אפשר להיות בכל מקום באותו זמן</span>.
+        </p>
         
-        <!-- Decorative element -->
-        <div class="absolute -bottom-4 -right-4 w-full h-full bg-green-100 dark:bg-green-900/30 rounded-3xl -z-10"></div>
+        <p class="text-xl text-stone-600 dark:text-stone-300">
+          אבל מה אם היה מישהו שיכול לעזור?
+        </p>
+      </div>
+
+      <!-- CTA -->
+      <a href="#solution" class="inline-flex items-center justify-center gap-3 px-12 py-6 bg-green-600 hover:bg-green-700 text-white rounded-full font-bold text-xl transition-all transform hover:scale-105 shadow-lg">
+        ראה איך אפשר לעזור
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Solution Section -->
+<section id="solution" class="py-24 bg-white dark:bg-zinc-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <p class="text-green-600 dark:text-green-400 font-semibold mb-4">הפתרון</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-stone-900 dark:text-stone-100 mb-6">
+        מישהו שכן יכול להיות בכל מקום
+      </h2>
+      <p class="text-xl text-stone-600 dark:text-stone-300">
+        צ'אטבוט חכם שמבין את הלקוחות שלך, עונה בשמך, ומעביר אליך רק מה שבאמת חשוב
+      </p>
+    </div>
+
+    <!-- How it works - conversational -->
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="text-center space-y-4">
+        <div class="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-3xl flex items-center justify-center mx-auto">
+          <span class="text-4xl">💬</span>
+        </div>
+        <h3 class="text-2xl font-bold text-stone-900 dark:text-stone-100">הוא מקשיב</h3>
+        <p class="text-stone-600 dark:text-stone-300">כל לקוח שפונה מקבל תשובה מיידית, בכל שעה. שאלות נפוצות מטופלות במקום.</p>
+      </div>
+      
+      <div class="text-center space-y-4">
+        <div class="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-3xl flex items-center justify-center mx-auto">
+          <span class="text-4xl">🎯</span>
+        </div>
+        <h3 class="text-2xl font-bold text-stone-900 dark:text-stone-100">הוא ממיין</h3>
+        <p class="text-stone-600 dark:text-stone-300">לידים חמים מזוהים ומועברים אליך מיד. פניות פחות דחופות מטופלות אוטומטית.</p>
+      </div>
+      
+      <div class="text-center space-y-4">
+        <div class="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-3xl flex items-center justify-center mx-auto">
+          <span class="text-4xl">📊</span>
+        </div>
+        <h3 class="text-2xl font-bold text-stone-900 dark:text-stone-100">הוא מתעד</h3>
+        <p class="text-stone-600 dark:text-stone-300">כל שיחה נשמרת, כל לקוח מתועד. אתה לא צריך לזכור כלום - המערכת עושה את זה.</p>
       </div>
     </div>
   </div>
