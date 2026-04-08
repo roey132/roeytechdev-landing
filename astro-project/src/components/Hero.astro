@@ -17,6 +17,26 @@ import WhatsAppDemo from './WhatsAppDemo.astro';
           <span class="text-sm font-semibold text-green-600 dark:text-green-400 uppercase tracking-wider">אוטומציה AI</span>
         </div>
         
+        <!-- Social Proof Bar -->
+        <div class="flex items-center gap-4 py-3 px-4 bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-200 dark:border-green-800 mb-6">
+          <div class="flex items-center gap-2">
+            <div class="flex -space-x-2 space-x-reverse">
+              <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center text-white text-sm font-bold">✓</div>
+              <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-bold">✓</div>
+              <div class="w-8 h-8 bg-green-400 rounded-full flex items-center justify-center text-white text-sm font-bold">✓</div>
+            </div>
+            <div class="text-sm font-semibold text-stone-900 dark:text-stone-100">
+              50+ עסקים מרוצים
+            </div>
+          </div>
+          <div class="hidden sm:block w-px h-6 bg-stone-300 dark:bg-zinc-600"></div>
+          <div class="hidden sm:flex items-center gap-2 text-sm text-stone-700 dark:text-stone-300">
+            <span class="font-semibold">4.9/5</span>
+            <span>⭐⭐⭐⭐⭐</span>
+            <span class="text-stone-500">דירוג ממוצע</span>
+          </div>
+        </div>
+        
         <h1 class="text-5xl md:text-7xl font-bold text-stone-900 dark:text-stone-100 leading-tight tracking-tight">
           חסון יותר מ-20 שעות בשבוע עם
           <span class="block mt-2 text-transparent bg-clip-text bg-linear-to-r from-green-600 to-green-400 dark:from-green-400 dark:to-green-600">
@@ -28,12 +48,42 @@ import WhatsAppDemo from './WhatsAppDemo.astro';
           צ'אטבוט AI מותאם אישית ומערכת CRM אוטומטית שלוכדים לידים, מגיבים ללקוחות 24/7 ומבטלים משימות חוזרות
         </p>
         
-        <div class="flex flex-col sm:flex-row gap-4 pt-4">
-          <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-green-600 hover:bg-green-700 text-white rounded-full font-semibold text-lg transition-all transform hover:scale-105">
-            קבע פגישה חינמית
+        <!-- Phone Capture Form - Primary CTA -->
+        <div class="bg-white dark:bg-zinc-900 rounded-2xl p-6 border-2 border-green-200 dark:border-green-800 shadow-xl">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="flex items-center gap-1">
+              <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span class="text-sm font-semibold text-green-700 dark:text-green-400">
+                50+ עסקים כבר חוסכים 20+ שעות בשבוע
+              </span>
+            </div>
+          </div>
+          <p class="text-lg font-semibold text-stone-900 dark:text-stone-100 mb-4">
+            השאירו מספר ונחזור אליכם תוך 5 דקות
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <input 
+              type="tel" 
+              placeholder="050-000-0000" 
+              class="flex-1 px-4 py-3 rounded-xl border-2 border-stone-300 dark:border-zinc-700 focus:border-green-500 dark:focus:border-green-600 focus:outline-none text-stone-900 dark:text-stone-100 placeholder-stone-400 dark:placeholder-zinc-500 transition-all"
+              dir="ltr"
+            />
+            <button class="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-xl font-semibold transition-all transform hover:scale-105 whitespace-nowrap">
+              דברו איתי 📱
+            </button>
+          </div>
+          <p class="text-xs text-stone-500 dark:text-stone-400 mt-3">
+            🔒 ללא התחייבות • שיחה ייעוצית חינמית
+          </p>
+        </div>
+        
+        <!-- Secondary CTAs -->
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <a href="https://wa.me/972500000000?text=היי,%20אני%20רוצה%20לשמוע%20על%20אוטומציה" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-full font-semibold transition-all transform hover:scale-105">
+            💬 שלחו הודעה בוואטסאפ
           </a>
-          <a href="#demo" class="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-green-200 dark:border-green-800 text-green-700 dark:text-green-300 rounded-full font-semibold text-lg hover:bg-green-50 dark:hover:bg-green-900/20 transition-all">
-            נסה הדגמה חיה
+          <a href="#process" class="inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-green-200 dark:border-green-800 text-green-700 dark:text-green-300 rounded-full font-semibold hover:bg-green-50 dark:hover:bg-green-900/20 transition-all">
+            למדו עוד על התהליך
           </a>
         </div>
       </div>
