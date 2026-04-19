@@ -1,0 +1,247 @@
+---
+---
+<div class="relative w-[320px] mx-auto" id="phone-demo-3">
+  <!-- Premium Gradient Phone -->
+  <div class="relative bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900 rounded-[3rem] p-2 shadow-2xl">
+    <!-- Dynamic Island -->
+    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-7 bg-black rounded-b-2xl z-10"></div>
+    
+    <!-- Inner Screen -->
+    <div class="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-indigo-950 rounded-[2.5rem] overflow-hidden flex flex-col h-[640px]">
+      <!-- Glass Effect Header -->
+      <div class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg px-4 pt-10 pb-4 flex items-center gap-3 flex-shrink-0 border-b border-white/20">
+        <div class="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent font-bold text-base">רועיטק</div>
+          <div class="text-slate-500 dark:text-slate-400 text-xs">פתרונות דיגיטליים</div>
+        </div>
+        <div class="flex gap-2">
+          <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 00-1.02.24l-2.2 2.2a15.045 15.045 0 01-6.59-6.59l2.2-2.21a.96.96 0 00.25-1A11.36 11.36 0 018.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/>
+            </svg>
+          </div>
+          <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Messages Container -->
+      <div class="flex-1 overflow-y-auto overflow-x-hidden px-3 py-4 space-y-2" id="chat-messages-3">
+        <!-- Messages will be inserted here -->
+        <!-- Typing Indicator will be inserted here dynamically -->
+      </div>
+
+      <!-- Modern Input -->
+      <div class="bg-white/60 dark:bg-slate-900/60 backdrop-blur-lg px-4 py-3 border-t border-white/20">
+        <div class="flex items-center gap-2">
+          <div class="flex-1 bg-white dark:bg-slate-800 rounded-2xl px-4 py-2 shadow-sm">
+            <div id="typing-input-3" class="text-slate-800 dark:text-slate-200 text-sm min-h-[20px]"></div>
+          </div>
+          <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg send-button-3">
+            <svg class="w-5 h-5 text-white transform rotate-180" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Home Indicator -->
+      <div class="bg-white/60 dark:bg-slate-900/60 backdrop-blur-lg flex justify-center items-center py-2">
+        <div class="w-32 h-1 bg-slate-300 dark:bg-slate-600 rounded-full"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #chat-messages-3 {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #chat-messages-3::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  #chat-messages-3::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  #chat-messages-3::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 2px;
+  }
+
+  .message-animation {
+    animation: messageSlideIn 0.4s ease-out forwards;
+  }
+
+  @keyframes messageSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.8);
+    }
+    60% {
+      transform: translateY(-5px) scale(1.02);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+</style>
+
+<script>
+  const messages = [
+    { type: 'customer', text: 'היי, רוצה להתייעץ לגבי אוטומציה לעסק' },
+    { type: 'bot', text: 'היי! 😊 אשמח לעזור. אנחנו מתמחים בפתרונות אוטומציה מותאמים אישית לכל עסק. במה את/ה מתעסק/ת?' },
+    { type: 'customer', text: 'יש לי עסק למסחר אלקטרוני' },
+    { type: 'bot', text: 'מעולה! 🛒 לעסקי איקומרס יש לנו פתרונות מעולים: צ\'אטבוט תמיכה אוטומטי, ניהול הזמנות ומעקב משלוחים. רוצה לשמוע פרטים?' },
+  ];
+
+  let currentMessageIndex = 0;
+  const chatMessages = document.getElementById('chat-messages-3');
+  const typingInput = document.getElementById('typing-input-3');
+  const sendButton = document.querySelector('.send-button-3');
+  let typingIndicatorElement = null;
+
+  function createTypingIndicator(type) {
+    const indicatorDiv = document.createElement('div');
+    const isCustomer = type === 'customer';
+    
+    indicatorDiv.className = `flex ${isCustomer ? 'justify-start' : 'justify-end'}`;
+    
+    const bubbleClass = isCustomer
+      ? 'bg-white dark:bg-slate-800 rounded-2xl rounded-br-sm shadow-md'
+      : 'bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl rounded-bl-sm shadow-md';
+    
+    const dotColor = isCustomer 
+      ? 'bg-gradient-to-r from-purple-500 to-pink-500' 
+      : 'bg-white';
+    
+    indicatorDiv.innerHTML = `
+      <div class="inline-flex items-center gap-1 ${bubbleClass} px-3 py-1.5">
+        <div class="flex gap-0.5">
+          <div class="w-1.5 h-1.5 ${dotColor} rounded-full animate-bounce" style="animation-delay: 0ms"></div>
+          <div class="w-1.5 h-1.5 ${dotColor} rounded-full animate-bounce" style="animation-delay: 150ms"></div>
+          <div class="w-1.5 h-1.5 ${dotColor} rounded-full animate-bounce" style="animation-delay: 300ms"></div>
+        </div>
+      </div>
+    `;
+    return indicatorDiv;
+  }
+
+  function createMessageElement(message) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `flex ${message.type === 'customer' ? 'justify-start' : 'justify-end'}`;
+
+    const bubbleClass = message.type === 'customer'
+      ? 'bg-white dark:bg-slate-800 text-slate-800 dark:text-stone-100 rounded-2xl rounded-br-sm shadow-md'
+      : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl rounded-bl-sm shadow-md';
+
+    messageDiv.innerHTML = `
+      <div class="max-w-[85%] ${bubbleClass} px-3 py-1.5">
+        <p class="text-xs leading-relaxed">${message.text}</p>
+        <div class="text-[8px] mt-0.5 ${message.type === 'customer' ? 'text-slate-400 dark:text-slate-500' : 'text-white/80'} flex items-center justify-end gap-0.5">
+          <span>${new Date().toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit' })}</span>
+        </div>
+      </div>
+    `;
+
+    return messageDiv;
+  }
+
+  function showTyping(type) {
+    if (!typingIndicatorElement) {
+      typingIndicatorElement = createTypingIndicator(type);
+    }
+    chatMessages.appendChild(typingIndicatorElement);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function hideTyping() {
+    if (typingIndicatorElement && typingIndicatorElement.parentNode) {
+      typingIndicatorElement.parentNode.removeChild(typingIndicatorElement);
+    }
+  }
+
+  function addMessage(message) {
+    // Remove typing indicator before adding message
+    if (typingIndicatorElement && typingIndicatorElement.parentNode) {
+      typingIndicatorElement.parentNode.removeChild(typingIndicatorElement);
+    }
+    
+    const messageElement = createMessageElement(message);
+    messageElement.style.opacity = '0';
+    messageElement.style.transform = 'scale(0.8) translateY(20px)';
+    
+    chatMessages.appendChild(messageElement);
+    
+    void messageElement.offsetHeight;
+    
+    requestAnimationFrame(() => {
+      messageElement.style.transition = 'all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+      messageElement.style.opacity = '1';
+      messageElement.style.transform = 'scale(1) translateY(0)';
+      
+      setTimeout(() => {
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }, 100);
+    });
+  }
+
+  async function typeMessage(text, callback) {
+    typingInput.textContent = '';
+    for (let i = 0; i < text.length; i++) {
+      typingInput.textContent += text[i];
+      await new Promise(resolve => setTimeout(resolve, 50 + Math.random() * 50));
+    }
+    
+    // Show send button animation
+    sendButton.style.transform = 'scale(1.1)';
+    await new Promise(resolve => setTimeout(resolve, 200));
+    sendButton.style.transform = 'scale(1)';
+    
+    // Clear input and callback
+    typingInput.textContent = '';
+    callback();
+  }
+
+  async function playConversation() {
+    if (currentMessageIndex >= messages.length) {
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      chatMessages.innerHTML = '';
+      currentMessageIndex = 0;
+    }
+
+    const message = messages[currentMessageIndex];
+
+    if (message.type === 'customer') {
+      // Type message in input
+      await typeMessage(message.text, () => {
+        addMessage(message);
+        currentMessageIndex++;
+        setTimeout(playConversation, 500);
+      });
+    } else {
+      // Show typing indicator for bot
+      showTyping('bot');
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      hideTyping();
+      addMessage(message);
+      currentMessageIndex++;
+      setTimeout(playConversation, 1000);
+    }
+  }
+
+  setTimeout(playConversation, 1000);
+</script>

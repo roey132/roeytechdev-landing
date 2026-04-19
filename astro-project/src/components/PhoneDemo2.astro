@@ -1,0 +1,253 @@
+---
+---
+<div class="relative w-[320px] mx-auto" id="phone-demo-2">
+  <!-- Dark Modern Phone -->
+  <div class="relative bg-zinc-900 rounded-[3rem] p-2 shadow-2xl border border-zinc-800">
+    <!-- Dynamic Island -->
+    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-7 bg-black rounded-b-2xl z-10"></div>
+    
+    <!-- Inner Screen -->
+    <div class="bg-zinc-950 rounded-[2.5rem] overflow-hidden flex flex-col h-[640px]">
+      <!-- WhatsApp Style Header -->
+      <div class="bg-zinc-900 px-4 pt-10 pb-3 flex items-center gap-3 flex-shrink-0 border-b border-zinc-800">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          <span class="text-white text-sm font-medium">WhatsApp</span>
+        </div>
+      </div>
+
+      <!-- Chat Header -->
+      <div class="bg-zinc-900 px-4 py-3 flex items-center gap-3 flex-shrink-0 border-b border-zinc-800">
+        <div class="w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
+          <span class="text-white font-bold text-sm">ר</span>
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="text-white font-semibold text-sm">רועיטק</div>
+          <div class="text-green-400 text-[10px] flex items-center gap-1">
+            <span class="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
+            מקוון
+          </div>
+        </div>
+        <div class="text-white">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Messages Container -->
+      <div class="flex-1 overflow-y-auto overflow-x-hidden px-3 py-3 space-y-2 bg-zinc-950" id="chat-messages-2">
+        <!-- Messages will be inserted here -->
+        <!-- Typing Indicator will be inserted here dynamically -->
+      </div>
+
+      <!-- Input Area -->
+      <div class="bg-zinc-900 px-3 py-2 flex items-center gap-2">
+        <div class="text-zinc-400">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19.035 7.912l-15.5 10a.5.5 0 01-.77-.532l2.05-6.45a1.5 1.5 0 00-.233-1.41L2.12 3.47a.5.5 0 01.657-.657l15.5 8.099a.5.5 0 010 .873z"/>
+          </svg>
+        </div>
+        <div class="flex-1 bg-zinc-800 rounded-full px-4 py-2">
+          <div id="typing-input-2" class="text-zinc-100 text-sm min-h-[20px]"></div>
+        </div>
+        <div class="text-green-500 send-button-2">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </div>
+      </div>
+      
+      <!-- Home Indicator -->
+      <div class="bg-zinc-900 flex justify-center items-center py-1">
+        <div class="w-32 h-1 bg-zinc-700 rounded-full"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #chat-messages-2 {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #chat-messages-2::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  #chat-messages-2::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  #chat-messages-2::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+    border-radius: 2px;
+  }
+
+  .message-animation {
+    animation: messageSlideIn 0.4s ease-out forwards;
+  }
+
+  @keyframes messageSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.8);
+    }
+    60% {
+      transform: translateY(-5px) scale(1.02);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+</style>
+
+<script>
+  const messages = [
+    { type: 'customer', text: 'מה זה אוטומציה?' },
+    { type: 'bot', text: 'אוטומציה זה תהליך שבו טכנולוגיה מבצעת משימות באופן אוטומטי, בלי צורך בהתערבות אנושית 🤖' },
+    { type: 'customer', text: 'איך זה יכול לעזור לי?' },
+    { type: 'bot', text: 'אנחנו מתמחים בצ\'אטבוטים, מערכות CRM והעברת הודעות אוטומטית. חוסך שעות עבודה ומגדיל מכירות! 📈' },
+  ];
+
+  let currentMessageIndex = 0;
+  const chatMessages = document.getElementById('chat-messages-2');
+  const typingInput = document.getElementById('typing-input-2');
+  const sendButton = document.querySelector('.send-button-2');
+  let typingIndicatorElement = null;
+
+  function createTypingIndicator(type) {
+    const indicatorDiv = document.createElement('div');
+    const isCustomer = type === 'customer';
+    
+    indicatorDiv.className = `flex ${isCustomer ? 'justify-end' : 'justify-start'}`;
+    
+    const bubbleClass = isCustomer
+      ? 'bg-green-600 rounded-2xl rounded-br-sm'
+      : 'bg-zinc-800 rounded-2xl rounded-bl-sm';
+    
+    const dotColor = isCustomer ? 'bg-white' : 'bg-green-400';
+    
+    indicatorDiv.innerHTML = `
+      <div class="inline-flex items-center gap-1 ${bubbleClass} px-3 py-1.5">
+        <div class="flex gap-0.5">
+          <div class="w-1.5 h-1.5 ${dotColor} rounded-full animate-bounce" style="animation-delay: 0ms"></div>
+          <div class="w-1.5 h-1.5 ${dotColor} rounded-full animate-bounce" style="animation-delay: 150ms"></div>
+          <div class="w-1.5 h-1.5 ${dotColor} rounded-full animate-bounce" style="animation-delay: 300ms"></div>
+        </div>
+      </div>
+    `;
+    return indicatorDiv;
+  }
+
+  function createMessageElement(message) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `flex ${message.type === 'customer' ? 'justify-end' : 'justify-start'}`;
+
+    const bubbleClass = message.type === 'customer'
+      ? 'bg-green-600 text-white rounded-2xl rounded-br-sm'
+      : 'bg-zinc-800 text-gray-100 dark:text-stone-100 rounded-2xl rounded-bl-sm';
+
+    messageDiv.innerHTML = `
+      <div class="max-w-[85%] ${bubbleClass} px-3 py-1.5">
+        <p class="text-xs leading-relaxed">${message.text}</p>
+        <div class="text-[8px] mt-0.5 ${message.type === 'customer' ? 'text-green-200' : 'text-zinc-500'} flex items-center justify-end gap-0.5">
+          <span>${new Date().toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit' })}</span>
+          ${message.type === 'customer' ? '<svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>' : ''}
+        </div>
+      </div>
+    `;
+
+    return messageDiv;
+  }
+
+  function showTyping(type) {
+    if (!typingIndicatorElement) {
+      typingIndicatorElement = createTypingIndicator(type);
+    }
+    chatMessages.appendChild(typingIndicatorElement);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function hideTyping() {
+    if (typingIndicatorElement && typingIndicatorElement.parentNode) {
+      typingIndicatorElement.parentNode.removeChild(typingIndicatorElement);
+    }
+  }
+
+  function addMessage(message) {
+    // Remove typing indicator before adding message
+    if (typingIndicatorElement && typingIndicatorElement.parentNode) {
+      typingIndicatorElement.parentNode.removeChild(typingIndicatorElement);
+    }
+    
+    const messageElement = createMessageElement(message);
+    messageElement.style.opacity = '0';
+    messageElement.style.transform = 'scale(0.8) translateY(20px)';
+    
+    chatMessages.appendChild(messageElement);
+    
+    void messageElement.offsetHeight;
+    
+    requestAnimationFrame(() => {
+      messageElement.style.transition = 'all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+      messageElement.style.opacity = '1';
+      messageElement.style.transform = 'scale(1) translateY(0)';
+      
+      setTimeout(() => {
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }, 100);
+    });
+  }
+
+  async function typeMessage(text, callback) {
+    typingInput.textContent = '';
+    for (let i = 0; i < text.length; i++) {
+      typingInput.textContent += text[i];
+      await new Promise(resolve => setTimeout(resolve, 50 + Math.random() * 50));
+    }
+    
+    // Show send button animation
+    sendButton.style.transform = 'scale(1.1)';
+    await new Promise(resolve => setTimeout(resolve, 200));
+    sendButton.style.transform = 'scale(1)';
+    
+    // Clear input and callback
+    typingInput.textContent = '';
+    callback();
+  }
+
+  async function playConversation() {
+    if (currentMessageIndex >= messages.length) {
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      chatMessages.innerHTML = '';
+      currentMessageIndex = 0;
+    }
+
+    const message = messages[currentMessageIndex];
+
+    if (message.type === 'customer') {
+      // Type message in input
+      await typeMessage(message.text, () => {
+        addMessage(message);
+        currentMessageIndex++;
+        setTimeout(playConversation, 500);
+      });
+    } else {
+      // Show typing indicator for bot
+      showTyping('bot');
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      hideTyping();
+      addMessage(message);
+      currentMessageIndex++;
+      setTimeout(playConversation, 1000);
+    }
+  }
+
+  setTimeout(playConversation, 1000);
+</script>
