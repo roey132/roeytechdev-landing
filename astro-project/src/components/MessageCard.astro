@@ -1,0 +1,68 @@
+---
+interface Props {
+  direction?: 'left' | 'right';
+  color?: 'green' | 'blue' | 'purple' | 'orange' | 'red';
+  size?: 'sm' | 'md' | 'lg';
+  delay?: number;
+}
+
+const { 
+  direction = 'left',
+  color = 'green', 
+  size = 'md',
+  delay = 0
+} = Astro.props;
+
+const colorClasses = {
+  green: 'bg-green-600 dark:bg-green-700 text-white',
+  blue: 'bg-blue-600 dark:bg-blue-700 text-white',
+  purple: 'bg-purple-600 dark:bg-purple-700 text-white',
+  orange: 'bg-orange-500 dark:bg-orange-600 text-white',
+  red: 'bg-red-600 dark:bg-red-700 text-white',
+};
+
+const sizeClasses = {
+  sm: 'max-w-[200px] px-3 py-2 text-sm',
+  md: 'max-w-[300px] px-4 py-3 text-base',
+  lg: 'max-w-[450px] px-5 py-4 text-lg',
+};
+
+const tipDirection = direction === 'left' 
+  ? 'rounded-br-sm' 
+  : 'rounded-bl-sm';
+---
+
+<div class={`inline-flex flex-col ${colorClasses[color]} ${sizeClasses[size]} rounded-2xl ${tipDirection} shadow-lg message-card`} style={`animation-delay: ${delay}ms`}>
+  <slot />
+</div>
+
+<style>
+  .message-card {
+    opacity: 0;
+    transform: scale(0.3) translateY(40px);
+    animation: messageSlideIn 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6) forwards;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .message-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+  }
+
+  @keyframes messageSlideIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.3) translateY(40px);
+    }
+    50% {
+      transform: scale(1.08) translateY(-4px);
+    }
+    70% {
+      transform: scale(0.95) translateY(1px);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+</style>

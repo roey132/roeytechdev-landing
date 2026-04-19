@@ -1,0 +1,110 @@
+---
+import MessageCard from './MessageCard.astro';
+---
+
+<section class="bg-stone-100 dark:bg-zinc-900 py-12 border-b border-stone-200 dark:border-zinc-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-8">
+      <h2 class="text-2xl font-bold text-stone-900 dark:text-stone-100 mb-2">Message Card Components</h2>
+      <p class="text-stone-600 dark:text-stone-400">Different variations and sizes</p>
+    </div>
+
+    <!-- Row 1: Different Colors -->
+    <div class="mb-8">
+      <h3 class="text-sm font-semibold text-stone-700 dark:text-stone-300 mb-4">Color Variations</h3>
+      <div class="flex flex-wrap gap-4 items-end">
+        <MessageCard color="green" delay={0}>
+          <p class="font-medium">Green message</p>
+          <p class="text-sm opacity-90 mt-1">Perfect for success states and CTAs</p>
+        </MessageCard>
+
+        <MessageCard color="blue" delay={100}>
+          <p class="font-medium">Blue message</p>
+          <p class="text-sm opacity-90 mt-1">Great for information and tips</p>
+        </MessageCard>
+
+        <MessageCard color="purple" delay={200}>
+          <p class="font-medium">Purple message</p>
+          <p class="text-sm opacity-90 mt-1">Ideal for premium features</p>
+        </MessageCard>
+
+        <MessageCard color="orange" delay={300}>
+          <p class="font-medium">Orange message</p>
+          <p class="text-sm opacity-90 mt-1">Good for warnings and highlights</p>
+        </MessageCard>
+
+        <MessageCard color="red" delay={400}>
+          <p class="font-medium">Red message</p>
+          <p class="text-sm opacity-90 mt-1">Use for important alerts</p>
+        </MessageCard>
+      </div>
+    </div>
+
+    <!-- Row 2: Different Directions -->
+    <div class="mb-8">
+      <h3 class="text-sm font-semibold text-stone-700 dark:text-stone-300 mb-4">Direction Variations</h3>
+      <div class="flex flex-wrap gap-4 items-center justify-center">
+        <div class="flex gap-4">
+          <MessageCard color="green" direction="left" delay={500}>
+            <p class="font-medium">Left tip</p>
+            <p class="text-sm opacity-90 mt-1">Message from the left</p>
+          </MessageCard>
+
+          <MessageCard color="blue" direction="right" delay={600}>
+            <p class="font-medium">Right tip</p>
+            <p class="text-sm opacity-90 mt-1">Message from the right</p>
+          </MessageCard>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: Different Sizes -->
+    <div class="mb-8">
+      <h3 class="text-sm font-semibold text-stone-700 dark:text-stone-300 mb-4">Size Variations</h3>
+      <div class="flex flex-wrap gap-4 items-end">
+        <MessageCard color="purple" size="sm" delay={700}>
+          <p class="font-medium">Small card</p>
+          <p class="text-xs opacity-90 mt-1">Compact size</p>
+        </MessageCard>
+
+        <MessageCard color="green" size="md" delay={800}>
+          <p class="font-medium">Medium card</p>
+          <p class="text-sm opacity-90 mt-1">Standard size for most content</p>
+        </MessageCard>
+
+        <MessageCard color="blue" size="lg" delay={900}>
+          <p class="font-medium">Large card</p>
+          <p class="text-base opacity-90 mt-1">Spacious for detailed content with more room for text and elements</p>
+        </MessageCard>
+      </div>
+    </div>
+
+    <!-- Row 4: Different Content Lengths -->
+    <div>
+      <h3 class="text-sm font-semibold text-stone-700 dark:text-stone-300 mb-4">Flexible Content</h3>
+      <div class="flex flex-wrap gap-4 items-end">
+        <MessageCard color="green" delay={1000}>
+          <p>Short</p>
+        </MessageCard>
+
+        <MessageCard color="blue" delay={1100}>
+          <p>Medium length message with some content</p>
+        </MessageCard>
+
+        <MessageCard color="purple" delay={1200}>
+          <p>Long message that can contain multiple lines of text. The card expands vertically to fit the content while maintaining the message bubble shape.</p>
+        </MessageCard>
+
+        <MessageCard color="orange" size="lg" delay={1300}>
+          <p class="font-bold">Rich content</p>
+          <p class="mt-2">Cards can contain various elements like:</p>
+          <ul class="list-disc list-inside mt-2 space-y-1">
+            <li>Bullet points</li>
+            <li>Multiple paragraphs</li>
+            <li>Formatted text</li>
+          </ul>
+        </MessageCard>
+      </div>
+    </div>
+  </div>
+</section>
