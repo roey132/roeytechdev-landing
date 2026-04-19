@@ -1,0 +1,263 @@
+---
+import MessageCard from './MessageCard.astro';
+---
+
+<section class="py-16 bg-stone-50 dark:bg-zinc-950">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h1 class="text-3xl md:text-4xl font-bold text-stone-900 dark:text-stone-100 mb-4">
+        FAQ Design Examples
+      </h1>
+      <p class="text-lg text-stone-600 dark:text-stone-300">
+        3 different approaches to FAQ design - test and choose your favorite
+      </p>
+    </div>
+
+    <!-- Design 1: Classic Accordion -->
+    <div class="mb-16">
+      <div class="inline-block mb-4 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-full">
+        <span class="text-sm font-semibold text-blue-700 dark:text-blue-400">Option 1: Classic Accordion</span>
+      </div>
+      
+      <div class="bg-white dark:bg-zinc-900 rounded-2xl border border-stone-200 dark:border-zinc-800 overflow-hidden">
+        <!-- FAQ 1.1 -->
+        <div class="border-b border-stone-200 dark:border-zinc-800">
+          <button class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-stone-50 dark:hover:bg-zinc-800 transition-colors">
+            <span class="text-lg font-semibold text-stone-900 dark:text-stone-100">איזה AI אתם משתמשים בצ'אטבוט?</span>
+            <svg class="w-5 h-5 text-blue-600 dark:text-blue-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="px-6 pb-4">
+            <p class="text-stone-600 dark:text-stone-300">הצ'אטבוט שלנו משתמש ב-OpenAI GPT-4 מתקדם, שמותאם אישית לעסק שלך. הוא לומד את השפה, הטון והמידע הספציפי שלך.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 1.2 -->
+        <div class="border-b border-stone-200 dark:border-zinc-800">
+          <button class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-stone-50 dark:hover:bg-zinc-800 transition-colors">
+            <span class="text-lg font-semibold text-stone-900 dark:text-stone-100">כמה זמן לוקח להקים את המערכת?</span>
+            <svg class="w-5 h-5 text-blue-600 dark:text-blue-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="px-6 pb-4 hidden">
+            <p class="text-stone-600 dark:text-stone-300">התהליך המלא אורך בין שבוע לשבועיים, תלוי במורכבות הפרויקט. ביום הראשון נבנה את הגרסה הראשונית.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 1.3 -->
+        <div>
+          <button class="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-stone-50 dark:hover:bg-zinc-800 transition-colors">
+            <span class="text-lg font-semibold text-stone-900 dark:text-stone-100">כמה עולה להקים מערכת כזו?</span>
+            <svg class="w-5 h-5 text-blue-600 dark:text-blue-400 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="px-6 pb-4 hidden">
+            <p class="text-stone-600 dark:text-stone-300">ההשקעה ההתחלתית מתחילה מ-5,000₪, אבל הרוב הלקוחות מקבלים החזר השקעה תוך חודש-חודשיים.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design 2: Chat Style (MessageCards) -->
+    <div class="mb-16">
+      <div class="inline-block mb-4 px-4 py-2 bg-purple-100 dark:bg-purple-900/30 rounded-full">
+        <span class="text-sm font-semibold text-purple-700 dark:text-purple-400">Option 2: Chat Style with MessageCards</span>
+      </div>
+      
+      <div class="space-y-6" dir="rtl">
+        <!-- FAQ 2.1 -->
+        <div class="faq-chat-item">
+          <div class="flex gap-4">
+            <!-- Answer -->
+            <div class="flex-1">
+              <MessageCard color="blue" direction="left" size="md">
+                <p class="text-sm">הצ'אטבוט שלנו משתמש ב-OpenAI GPT-4 מתקדם, שמותאם אישית לעסק שלך.</p>
+              </MessageCard>
+            </div>
+            <!-- Question -->
+            <div class="flex-1 flex justify-end">
+              <MessageCard color="purple" direction="left" size="sm">
+                <p class="font-semibold text-sm cursor-pointer hover:scale-105 transition-transform">איזה AI אתם משתמשים?</p>
+              </MessageCard>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2.2 -->
+        <div class="faq-chat-item">
+          <div class="flex gap-4">
+            <!-- Answer -->
+            <div class="flex-1 opacity-50">
+              <MessageCard color="blue" direction="left" size="md">
+                <p class="text-sm">התהליך המלא אורך בין שבוע לשבועיים, תלוי במורכבות הפרויקט.</p>
+              </MessageCard>
+            </div>
+            <!-- Question -->
+            <div class="flex-1 flex justify-end">
+              <MessageCard color="purple" direction="left" size="sm">
+                <p class="font-semibold text-sm cursor-pointer hover:scale-105 transition-transform">כמה זמן לוקח?</p>
+              </MessageCard>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2.3 -->
+        <div class="faq-chat-item">
+          <div class="flex gap-4">
+            <!-- Answer -->
+            <div class="flex-1 opacity-50">
+              <MessageCard color="blue" direction="left" size="md">
+                <p class="text-sm">ההשקעה ההתחלתית מתחילה מ-5,000₪, עם אפשרות לתשלומים.</p>
+              </MessageCard>
+            </div>
+            <!-- Question -->
+            <div class="flex-1 flex justify-end">
+              <MessageCard color="purple" direction="left" size="sm">
+                <p class="font-semibold text-sm cursor-pointer hover:scale-105 transition-transform">כמה עולה?</p>
+              </MessageCard>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design 3: Modern Grid -->
+    <div class="mb-16">
+      <div class="inline-block mb-4 px-4 py-2 bg-green-100 dark:bg-green-900/30 rounded-full">
+        <span class="text-sm font-semibold text-green-700 dark:text-green-400">Option 3: Interactive Grid</span>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-6" dir="rtl">
+        <!-- FAQ 3.1 -->
+        <div class="group bg-white dark:bg-zinc-900 rounded-2xl p-6 border-2 border-stone-200 dark:border-zinc-800 hover:border-blue-400 dark:hover:border-blue-600 transition-all cursor-pointer">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+              <span class="text-lg">🤖</span>
+            </div>
+            <h3 class="font-bold text-stone-900 dark:text-stone-100">איזה AI?</h3>
+          </div>
+          <p class="text-stone-600 dark:text-stone-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+            הצ'אטבוט שלנו משתמש ב-OpenAI GPT-4 מתקדם, שמותאם אישית לעסק שלך.
+          </p>
+        </div>
+
+        <!-- FAQ 3.2 -->
+        <div class="group bg-white dark:bg-zinc-900 rounded-2xl p-6 border-2 border-stone-200 dark:border-zinc-800 hover:border-blue-400 dark:hover:border-blue-600 transition-all cursor-pointer">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+              <span class="text-lg">⏰</span>
+            </div>
+            <h3 class="font-bold text-stone-900 dark:text-stone-100">כמה זמן?</h3>
+          </div>
+          <p class="text-stone-600 dark:text-stone-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+            התהליך המלא אורך בין שבוע לשבועיים, תלוי במורכבות.
+          </p>
+        </div>
+
+        <!-- FAQ 3.3 -->
+        <div class="group bg-white dark:bg-zinc-900 rounded-2xl p-6 border-2 border-stone-200 dark:border-zinc-800 hover:border-blue-400 dark:hover:border-blue-600 transition-all cursor-pointer">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center">
+              <span class="text-lg">💰</span>
+            </div>
+            <h3 class="font-bold text-stone-900 dark:text-stone-100">כמה עולה?</h3>
+          </div>
+          <p class="text-stone-600 dark:text-stone-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+            ההשקעה ההתחלתית מתחילה מ-5,000₪, עם אפשרות לתשלומים.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* Option 1: Classic Accordion Styles */
+  .classic-faq button svg {
+    transition: transform 0.3s ease;
+  }
+  
+  .classic-faq button[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+  }
+
+  /* Option 2: Chat Styles */
+  .faq-chat-item {
+    transition: all 0.3s ease;
+  }
+
+  .faq-chat-item:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Option 3: Grid Styles */
+  .grid-faq-item {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .grid-faq-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.15);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Option 1: Classic Accordion functionality
+    const classicButtons = document.querySelectorAll('.classic-faq button');
+    
+    classicButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector('svg');
+        const isOpen = !answer.classList.contains('hidden');
+        
+        // Close all others
+        classicButtons.forEach(otherButton => {
+          if (otherButton !== button) {
+            const otherAnswer = otherButton.nextElementSibling;
+            const otherIcon = otherButton.querySelector('svg');
+            otherAnswer.classList.add('hidden');
+            otherIcon.style.transform = 'rotate(0deg)';
+          }
+        });
+        
+        // Toggle current
+        answer.classList.toggle('hidden');
+        icon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+      });
+    });
+
+    // Option 2: Chat functionality
+    const chatQuestions = document.querySelectorAll('.faq-chat-item .message-card');
+    
+    chatQuestions.forEach((questionCard, index) => {
+      questionCard.addEventListener('click', () => {
+        const answerCard = questionCard.closest('.faq-chat-item').querySelector('.flex-1:first-child');
+        
+        // Reset all
+        document.querySelectorAll('.faq-chat-item .flex-1:first-child').forEach(card => {
+          card.classList.add('opacity-50');
+          card.classList.remove('opacity-100');
+        });
+        
+        // Show current answer
+        answerCard.classList.remove('opacity-50');
+        answerCard.classList.add('opacity-100');
+      });
+    });
+
+    // First answer visible by default
+    if (chatQuestions.length > 0) {
+      const firstAnswer = document.querySelector('.faq-chat-item .flex-1:first-child');
+      if (firstAnswer) {
+        firstAnswer.classList.remove('opacity-50');
+        firstAnswer.classList.add('opacity-100');
+      }
+    }
+  });
+</script>

@@ -1,4 +1,5 @@
 ---
+import MessageCard from './MessageCard.astro';
 ---
 
 <section class="py-24 bg-stone-100 dark:bg-zinc-900 relative">
@@ -17,59 +18,133 @@
         </p>
       </div>
       
-      <!-- Right - Pain points with different layout -->
-      <div class="space-y-6">
-        <!-- Pain Point 1 -->
-        <div class="group relative bg-white dark:bg-zinc-950 rounded-2xl p-8 border border-blue-200 dark:border-blue-900/50 hover:border-blue-300 dark:hover:border-blue-800 transition-all">
-          <div class="flex items-start gap-6">
-            <div class="flex-shrink-0 w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-2xl">
-              ⏰
-            </div>
-            <div class="flex-1">
-              <h3 class="text-xl font-bold text-stone-900 dark:text-stone-100 mb-3">
-                לקוחות שנוטשים באמצע
-              </h3>
-              <p class="text-stone-600 dark:text-stone-300 leading-relaxed">
-                לקוחות מתעייפים מלחכות לתגובה והולכים למתחרים. בוואטסאפ ובאתר, כל דקה שעוברת בלי תשובה מפחיתה את הסיכוי לסגור את העסקה.
-              </p>
-            </div>
-          </div>
-        </div>
+      <!-- Right - Pain points as conversation -->
+      <div class="space-y-8" dir="rtl">
         
-        <!-- Pain Point 2 -->
-        <div class="group relative bg-white dark:bg-zinc-950 rounded-2xl p-8 border border-blue-200 dark:border-blue-900/50 hover:border-blue-300 dark:hover:border-blue-800 transition-all">
-          <div class="flex items-start gap-6">
-            <div class="flex-shrink-0 w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-2xl">
-              📊
-            </div>
-            <div class="flex-1">
-              <h3 class="text-xl font-bold text-stone-900 dark:text-stone-100 mb-3">
-                עונים על אותן שאלות שוב ושוב
-              </h3>
-              <p class="text-stone-600 dark:text-stone-300 leading-relaxed">
-                80% מהפניות הן אותן שאלות: מחירון, שעות פעילות, משלוחים. הצוות שלך מבזבז שעות יקרות על משימות חוזרות במקום להתמקד בסגירת מכירות.
-              </p>
-            </div>
+        <!-- Pain Point 1: Customer Complaint -->
+        <div class="space-y-4">
+          <!-- Customer message (problem) -->
+          <div class="flex justify-end scroll-reveal">
+            <MessageCard color="red" direction="right" size="lg">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-2xl">😤</span>
+                <span class="font-bold">לקוחות שנוטשים</span>
+              </div>
+              <p class="text-sm">חיכיתי 20 דקות לתגובה ואז סתם עזבו! אין לי סבלנות לכזה...</p>
+            </MessageCard>
+          </div>
+          
+          <!-- Bot message (solution) -->
+          <div class="flex justify-start scroll-reveal delay-100">
+            <MessageCard color="blue" direction="left" size="lg">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-2xl">✅</span>
+                <span class="font-bold">הפתרון שלנו</span>
+              </div>
+              <p class="text-sm">הצ'אטבוט שלנו עונה מיידית - 24/7! לקוחות מקבלים תשובה תוך שניות ונשארים מרוצים.</p>
+            </MessageCard>
           </div>
         </div>
-        
-        <!-- Pain Point 3 -->
-        <div class="group relative bg-white dark:bg-zinc-950 rounded-2xl p-8 border border-blue-200 dark:border-blue-900/50 hover:border-blue-300 dark:hover:border-blue-800 transition-all">
-          <div class="flex items-start gap-6">
-            <div class="flex-shrink-0 w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-2xl">
-              🔄
-            </div>
-            <div class="flex-1">
-              <h3 class="text-xl font-bold text-stone-900 dark:text-stone-100 mb-3">
-                מפסידים לידים מחוץ לשעות העבודה
-              </h3>
-              <p class="text-stone-600 dark:text-stone-300 leading-relaxed">
-                העסק שלך סגור בלילה ובסופ"ש, אבל הלקוחות לא. לידים חמים מתקררים כשמחכים לבוקר, ומתחרים עם צ'אטבוט זמינים 24/7 לוקחים את הלקוחות שלך.
-              </p>
-            </div>
+
+        <!-- Pain Point 2: Repetitive Questions -->
+        <div class="space-y-4">
+          <!-- Customer message (problem) -->
+          <div class="flex justify-end scroll-reveal delay-200">
+            <MessageCard color="red" direction="right" size="lg">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-2xl">😫</span>
+                <span class="font-bold">שאלות חוזרות</span>
+              </div>
+              <p class="text-sm">שוב ושוב אותן שאלות! מה המחיר? מתי אתם פתוחים? איך משלמים? זה נגמר לי מהיום...</p>
+            </MessageCard>
+          </div>
+          
+          <!-- Bot message (solution) -->
+          <div class="flex justify-start scroll-reveal delay-300">
+            <MessageCard color="blue" direction="left" size="lg">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-2xl">🤖</span>
+                <span class="font-bold">הפתרון שלנו</span>
+              </div>
+              <p class="text-sm">הצ'אטבוט עונה אוטומטית על 90% מהשאלות החוזרות ומעביר רק את המקרים האמיתיים אליכם.</p>
+            </MessageCard>
           </div>
         </div>
+
+        <!-- Pain Point 3: Lost Leads -->
+        <div class="space-y-4">
+          <!-- Customer message (problem) -->
+          <div class="flex justify-end scroll-reveal delay-400">
+            <MessageCard color="red" direction="right" size="lg">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-2xl">😢</span>
+                <span class="font-bold">לידים שאבדו</span>
+              </div>
+              <p class="text-sm">הייתי לי חנות אונליין ולא עניתי בזמן. הלקוח הלך למתחרה ואני הפסדתי הזדמנות...</p>
+            </MessageCard>
+          </div>
+          
+          <!-- Bot message (solution) -->
+          <div class="flex justify-start scroll-reveal delay-500">
+            <MessageCard color="blue" direction="left" size="lg">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-2xl">💰</span>
+                <span class="font-bold">הפתרון שלנו</span>
+              </div>
+              <p class="text-sm">הצ'אטבוט זמין 24/7, גם בשעות שבת וחג. לידים חמים לא נעלמים לעולם!</p>
+            </MessageCard>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .pain-point-conversation {
+    transition: all 0.3s ease;
+  }
+
+  .pain-point-conversation:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Disable MessageCard's built-in animation for pain points */
+  .pain-point-conversation :global(.message-card),
+  .scroll-reveal :global(.message-card) {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Enable scroll animation for individual messages */
+  .scroll-reveal {
+    opacity: 0;
+    transform: scale(0.7) translateY(10px);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+  /* Add subtle glow effect on hover */
+  .pain-point-conversation:hover :global(.message-card),
+  .scroll-reveal:hover :global(.message-card) {
+    box-shadow: 0 8px 30px -10px rgba(239, 68, 68, 0.3) !important;
+  }
+
+  /* Make customer complaints more prominent */
+  .pain-point-conversation :global(.bg-red-600),
+  .scroll-reveal :global(.bg-red-600) {
+    box-shadow: 0 4px 20px -5px rgba(239, 68, 68, 0.4) !important;
+  }
+
+  /* Make solution messages stand out */
+  .pain-point-conversation :global(.bg-blue-600),
+  .scroll-reveal :global(.bg-blue-600) {
+    box-shadow: 0 4px 20px -5px rgba(59, 130, 246, 0.3) !important;
+  }
+</style>
