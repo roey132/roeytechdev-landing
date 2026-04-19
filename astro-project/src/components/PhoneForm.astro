@@ -26,13 +26,13 @@
             
             // Show success message
             button.textContent = 'המספר התקבל! ✓';
-            button.classList.remove('bg-green-600', 'hover:bg-green-700');
-            button.classList.add('bg-green-800');
+            button.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+            button.classList.add('bg-blue-800');
             
             setTimeout(() => {
               button.textContent = button.textContent.includes('קבעו') ? 'קבעו ייעוץ חינמי 📱' : 'דברו איתי 📱';
-              button.classList.add('bg-green-600', 'hover:bg-green-700');
-              button.classList.remove('bg-green-800');
+              button.classList.add('bg-blue-600', 'hover:bg-blue-700');
+              button.classList.remove('bg-blue-800');
               phoneInput.value = '';
             }, 3000);
           } else {

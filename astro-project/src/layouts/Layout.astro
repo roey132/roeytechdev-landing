@@ -83,11 +83,11 @@ const { title = "רועיטק - Automation Solutions" } = Astro.props;
                 // Show success feedback
                 const originalText = button.innerHTML;
                 button.innerHTML = 'המספר התקבל! ✓';
-                button.classList.add('bg-green-800');
+                button.classList.add('bg-blue-800');
                 
                 setTimeout(() => {
                   button.innerHTML = originalText;
-                  button.classList.remove('bg-green-800');
+                  button.classList.remove('bg-blue-800');
                   phoneInput.value = '';
                 }, 3000);
               } else if (phoneInput) {

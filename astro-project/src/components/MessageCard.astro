@@ -1,20 +1,19 @@
 ---
 interface Props {
   direction?: 'left' | 'right';
-  color?: 'green' | 'blue' | 'purple' | 'orange' | 'red';
+  color?: 'blue' | 'purple' | 'orange' | 'red';
   size?: 'sm' | 'md' | 'lg';
   delay?: number;
 }
 
 const { 
   direction = 'left',
-  color = 'green', 
+  color = 'blue', 
   size = 'md',
   delay = 0
 } = Astro.props;
 
 const colorClasses = {
-  green: 'bg-green-600 dark:bg-green-700 text-white',
   blue: 'bg-blue-600 dark:bg-blue-700 text-white',
   purple: 'bg-purple-600 dark:bg-purple-700 text-white',
   orange: 'bg-orange-500 dark:bg-orange-600 text-white',

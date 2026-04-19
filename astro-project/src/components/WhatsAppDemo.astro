@@ -9,7 +9,7 @@
     <!-- Inner Screen -->
     <div class="bg-stone-100 dark:bg-zinc-950 rounded-[2.5rem] overflow-hidden flex flex-col h-[640px]">
       <!-- Status Bar -->
-      <div class="bg-green-600 dark:bg-green-700 px-6 pt-8 pb-2 flex justify-between items-center flex-shrink-0">
+      <div class="bg-blue-600 dark:bg-blue-700 px-6 pt-8 pb-2 flex justify-between items-center flex-shrink-0">
         <div class="flex items-center gap-2">
           <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
@@ -20,7 +20,7 @@
       </div>
 
       <!-- Chat Header -->
-      <div class="bg-green-600 dark:bg-green-700 px-4 py-3 flex items-center gap-3 flex-shrink-0">
+      <div class="bg-blue-600 dark:bg-blue-700 px-4 py-3 flex items-center gap-3 flex-shrink-0">
         <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
           <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
@@ -28,8 +28,8 @@
         </div>
         <div class="flex-1 min-w-0">
           <div class="text-white font-semibold text-sm truncate">רועיטק Bot</div>
-          <div class="text-green-100 text-[10px] flex items-center gap-1">
-            <span class="w-1.5 h-1.5 bg-green-300 rounded-full animate-pulse"></span>
+          <div class="text-blue-100 text-[10px] flex items-center gap-1">
+            <span class="w-1.5 h-1.5 bg-blue-300 rounded-full animate-pulse"></span>
             מחובר
           </div>
         </div>
@@ -52,7 +52,7 @@
       </div>
       
       <div id="typing-indicator-customer" class="px-3 pb-2 hidden justify-end">
-        <div class="inline-flex items-center gap-1 bg-green-600 rounded-2xl rounded-bl-sm px-3 py-1.5 shadow-sm">
+        <div class="inline-flex items-center gap-1 bg-blue-600 rounded-2xl rounded-bl-sm px-3 py-1.5 shadow-sm">
           <div class="flex gap-0.5">
             <div class="w-1.5 h-1.5 bg-white rounded-full animate-bounce" style="animation-delay: 0ms"></div>
             <div class="w-1.5 h-1.5 bg-white rounded-full animate-bounce" style="animation-delay: 150ms"></div>
@@ -162,13 +162,13 @@
     messageDiv.className = `flex ${message.type === 'customer' ? 'justify-end' : 'justify-start'}`;
 
     const bubbleClass = message.type === 'customer'
-      ? 'bg-green-600 text-white rounded-2xl rounded-bl-sm'
+      ? 'bg-blue-600 text-white rounded-2xl rounded-bl-sm'
       : 'bg-white dark:bg-zinc-800 text-stone-900 dark:text-stone-100 rounded-2xl rounded-br-sm';
 
     messageDiv.innerHTML = `
       <div class="max-w-[85%] ${bubbleClass} px-3 py-1.5 shadow-sm">
         <p class="text-xs leading-relaxed">${message.text}</p>
-        <div class="text-[8px] mt-0.5 ${message.type === 'customer' ? 'text-green-100' : 'text-stone-400 dark:text-zinc-500'} flex items-center justify-end gap-0.5">
+        <div class="text-[8px] mt-0.5 ${message.type === 'customer' ? 'text-blue-100' : 'text-stone-400 dark:text-zinc-500'} flex items-center justify-end gap-0.5">
           <span>${new Date().toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit' })}</span>
           ${message.type === 'customer' ? '<svg class="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>' : ''}
         </div>
