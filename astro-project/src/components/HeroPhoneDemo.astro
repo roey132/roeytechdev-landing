@@ -1,6 +1,6 @@
 ---
 ---
-<div class="relative w-[320px] mx-auto" id="phone-demo-1">
+<div class="relative w-[320px] mx-auto" id="phone-demo-hero">
   <!-- Modern Minimal Phone -->
   <div class="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-[3rem] p-2.5 shadow-2xl">
     <!-- Dynamic Island -->
@@ -22,7 +22,7 @@
       </div>
 
       <!-- Messages Container -->
-      <div class="flex-1 overflow-y-auto overflow-x-hidden px-3 py-4 space-y-2 bg-gradient-to-b from-gray-50 to-white dark:from-zinc-900 dark:to-zinc-950" id="chat-messages-1">
+      <div class="flex-1 overflow-y-auto overflow-x-hidden px-3 py-4 space-y-2 bg-gradient-to-b from-gray-50 to-white dark:from-zinc-900 dark:to-zinc-950" id="chat-messages-hero">
         <!-- Messages will be inserted here -->
         <!-- Typing Indicator will be inserted here dynamically -->
       </div>
@@ -30,9 +30,9 @@
       <!-- Clean Footer -->
       <div class="bg-white dark:bg-zinc-900 border-t border-gray-100 dark:border-zinc-800 px-4 py-3 flex items-center gap-2">
         <div class="flex-1 bg-gray-100 dark:bg-zinc-800 rounded-full px-4 py-2">
-          <div id="typing-input-1" class="text-gray-800 dark:text-gray-200 text-sm min-h-[20px]"></div>
+          <div id="typing-input-hero" class="text-gray-800 dark:text-gray-200 text-sm min-h-[20px]"></div>
         </div>
-        <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 send-button-1">
+        <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 send-button-hero">
           <svg class="w-5 h-5 text-white transform rotate-180" fill="currentColor" viewBox="0 0 24 24">
             <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
           </svg>
@@ -48,21 +48,21 @@
 </div>
 
 <style>
-  #chat-messages-1 {
+  #chat-messages-hero {
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
   }
 
-  #chat-messages-1::-webkit-scrollbar {
+  #chat-messages-hero::-webkit-scrollbar {
     width: 4px;
   }
 
-  #chat-messages-1::-webkit-scrollbar-track {
+  #chat-messages-hero::-webkit-scrollbar-track {
     background: transparent;
   }
 
-  #chat-messages-1::-webkit-scrollbar-thumb {
+  #chat-messages-hero::-webkit-scrollbar-thumb {
     background: #cbd5e1;
     border-radius: 2px;
   }
@@ -95,9 +95,9 @@
   ];
 
   let currentMessageIndex = 0;
-  const chatMessages = document.getElementById('chat-messages-1');
-  const typingInput = document.getElementById('typing-input-1');
-  const sendButton = document.querySelector('.send-button-1');
+  const chatMessages = document.getElementById('chat-messages-hero');
+  const typingInput = document.getElementById('typing-input-hero');
+  const sendButton = document.querySelector('.send-button-hero');
   let typingIndicatorElement = null;
 
   function createTypingIndicator(type) {
