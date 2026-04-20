@@ -88,10 +88,11 @@
 
 <script>
   const messages = [
-    { type: 'customer', text: 'היי, אני בעל עסק קטן ואני מפסיד המון זמן על תקשורת עם לקוחות' },
-    { type: 'bot', text: 'היי! 👋 אני מבין בדיוק איפה אתה נמצא. אנחנו ברועיטק מתמחים בפתרונות אוטומציה שחוסכים לעסקים כ-20 שעות בשבוע. במה אתה מתעסק?' },
-    { type: 'customer', text: 'יש לי חנות אונליין ואני לא מצליח לענות לכל הפניות בזמן' },
-    { type: 'bot', text: 'מצוין! 😊 לחנויות אונליין יש לנו צ\'אטבוט AI שעונה 24/7, מסנן לידים ומעביר רק פניות רציניות אליך. רוצה לראות איך זה עובד?' },
+    { type: 'customer', text: 'היי, אני מאבד המון זמן על שאלות חוזרות בווטסאפ ולא מגיע ללידים החדשים.' },
+    { type: 'bot', text: 'בדיוק בשביל זה אני כאן. ⚡ אני יכול לענות לכולם תוך שניות, לסנן לידים לא רלוונטיים ולתאם פגישות ביומן שלך.' },
+    { type: 'customer', text: 'וזה נשמר לי במערכת בצורה מסודרת?' },
+    { type: 'bot', text: 'בטח. כל ליד נשמר בצורה מסודרת ומתועדת בטבלאות או בCRM. רוצה לראות איך הבוט שלך יתחיל לעבוד?' },
+    { type: 'typing', text: 'כן, בוא נתקדם!' },
   ];
 
   let currentMessageIndex = 0;
@@ -187,12 +188,12 @@
     typingInput.textContent = '';
     for (let i = 0; i < text.length; i++) {
       typingInput.textContent += text[i];
-      await new Promise(resolve => setTimeout(resolve, 50 + Math.random() * 50));
+      await new Promise(resolve => setTimeout(resolve, 25 + Math.random() * 25));
     }
     
     // Show send button animation
     sendButton.style.transform = 'scale(1.1)';
-    await new Promise(resolve => setTimeout(resolve, 200));
+    await new Promise(resolve => setTimeout(resolve, 100));
     sendButton.style.transform = 'scale(1)';
     
     // Clear input and callback
@@ -202,28 +203,39 @@
 
   async function playConversation() {
     if (currentMessageIndex >= messages.length) {
-      await new Promise(resolve => setTimeout(resolve, 3000));
+      await new Promise(resolve => setTimeout(resolve, 2000));
       chatMessages.innerHTML = '';
       currentMessageIndex = 0;
     }
 
     const message = messages[currentMessageIndex];
 
-    if (message.type === 'customer') {
+    if (message.type === 'typing') {
+      // Show typing indicator for customer
+      showTyping('customer');
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      hideTyping();
+      // Then send the message
+      await typeMessage(message.text, () => {
+        addMessage({ type: 'customer', text: message.text });
+        currentMessageIndex++;
+        setTimeout(playConversation, 300);
+      });
+    } else if (message.type === 'customer') {
       // Type message in input
       await typeMessage(message.text, () => {
         addMessage(message);
         currentMessageIndex++;
-        setTimeout(playConversation, 500);
+        setTimeout(playConversation, 300);
       });
     } else {
       // Show typing indicator for bot
       showTyping('bot');
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      await new Promise(resolve => setTimeout(resolve, 750));
       hideTyping();
       addMessage(message);
       currentMessageIndex++;
-      setTimeout(playConversation, 1000);
+      setTimeout(playConversation, 500);
     }
   }
 
