@@ -241,5 +241,26 @@
     }
   }
 
-  setTimeout(playConversation, 1000);
+  // Check if mobile and use Intersection Observer
+  const isMobile = window.innerWidth < 768;
+  
+  if (isMobile) {
+    // For mobile: start animation when phone scrolls into view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && currentMessageIndex === 0) {
+          setTimeout(playConversation, 500);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    
+    const phoneElement = document.getElementById('phone-demo-hero');
+    if (phoneElement) {
+      observer.observe(phoneElement);
+    }
+  } else {
+    // For desktop: start animation immediately as before
+    setTimeout(playConversation, 1000);
+  }
 </script>
