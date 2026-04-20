@@ -2,22 +2,22 @@
 ---
 <div class="relative w-[320px] mx-auto" id="phone-demo-hero">
   <!-- Modern Minimal Phone -->
-  <div class="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-[3rem] p-2.5 shadow-2xl">
+  <div class="relative bg-gradient-to-br from-slate-900 to-blue-950 rounded-[3rem] p-2.5 shadow-2xl">
     <!-- Dynamic Island -->
     <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-7 bg-black rounded-b-2xl z-10"></div>
     
     <!-- Inner Screen -->
     <div class="bg-white dark:bg-zinc-950 rounded-[2.5rem] overflow-hidden flex flex-col h-[640px]">
       <!-- Clean Header -->
-      <div class="bg-gradient-to-r from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 px-4 pt-10 pb-4 flex items-center gap-3 flex-shrink-0">
-        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
-          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <div class="bg-gradient-to-r from-blue-900 to-blue-950 dark:from-blue-950 dark:to-blue-900 px-4 pt-10 pb-4 flex items-center gap-3 flex-shrink-0">
+        <div class="w-10 h-10 bg-blue-800/30 rounded-full flex items-center justify-center flex-shrink-0">
+          <svg class="w-5 h-5 text-blue-200" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
           </svg>
         </div>
         <div class="flex-1 min-w-0">
           <div class="text-white font-bold text-base">רועיטק</div>
-          <div class="text-blue-100 text-xs">אוטומציה חכמה</div>
+          <div class="text-blue-200 text-xs">אוטומציה חכמה</div>
         </div>
       </div>
 
@@ -32,7 +32,7 @@
         <div class="flex-1 bg-gray-100 dark:bg-zinc-800 rounded-full px-4 py-2">
           <div id="typing-input-hero" class="text-gray-800 dark:text-gray-200 text-sm min-h-[20px]"></div>
         </div>
-        <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 send-button-hero">
+        <div class="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center flex-shrink-0 send-button-hero">
           <svg class="w-5 h-5 text-white transform rotate-180" fill="currentColor" viewBox="0 0 24 24">
             <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
           </svg>
@@ -109,7 +109,7 @@
     
     const bubbleClass = isCustomer
       ? 'bg-white dark:bg-zinc-800 rounded-2xl rounded-br-sm shadow-sm'
-      : 'bg-blue-500 rounded-2xl rounded-bl-sm shadow-sm';
+      : 'bg-blue-900 rounded-2xl rounded-bl-sm shadow-sm';
     
     const dotColor = isCustomer ? 'bg-blue-400' : 'bg-white';
     
@@ -131,7 +131,7 @@
 
     const bubbleClass = message.type === 'customer'
       ? 'bg-white dark:bg-zinc-800 text-gray-900 dark:text-stone-100 rounded-2xl rounded-br-sm shadow-sm'
-      : 'bg-blue-500 text-white rounded-2xl rounded-bl-sm shadow-sm';
+      : 'bg-blue-900 text-white rounded-2xl rounded-bl-sm shadow-sm';
 
     messageDiv.innerHTML = `
       <div class="max-w-[85%] ${bubbleClass} px-3 py-1.5">
@@ -203,39 +203,41 @@
 
   async function playConversation() {
     if (currentMessageIndex >= messages.length) {
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      await new Promise(resolve => setTimeout(resolve, 3000));
       chatMessages.innerHTML = '';
       currentMessageIndex = 0;
+      setTimeout(playConversation, 500);
+      return;
     }
 
     const message = messages[currentMessageIndex];
 
-    if (message.type === 'typing') {
-      // Show typing indicator for customer
-      showTyping('customer');
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      hideTyping();
-      // Then send the message
+    if (message.type === 'customer' || message.type === 'typing') {
+      // 1. User types message in input field
       await typeMessage(message.text, () => {
         addMessage({ type: 'customer', text: message.text });
         currentMessageIndex++;
-        setTimeout(playConversation, 300);
+        
+        // 2. Bot typing animation
+        setTimeout(async () => {
+          if (currentMessageIndex < messages.length) {
+            const nextMessage = messages[currentMessageIndex];
+            if (nextMessage.type === 'bot') {
+              showTyping('bot');
+              await new Promise(resolve => setTimeout(resolve, 1000));
+              hideTyping();
+              addMessage(nextMessage);
+              currentMessageIndex++;
+              setTimeout(playConversation, 600);
+            }
+          }
+        }, 400);
       });
-    } else if (message.type === 'customer') {
-      // Type message in input
-      await typeMessage(message.text, () => {
-        addMessage(message);
-        currentMessageIndex++;
-        setTimeout(playConversation, 300);
-      });
-    } else {
-      // Show typing indicator for bot
-      showTyping('bot');
-      await new Promise(resolve => setTimeout(resolve, 750));
-      hideTyping();
+    } else if (message.type === 'bot') {
+      // Bot message (shouldn't normally reach here due to above logic)
       addMessage(message);
       currentMessageIndex++;
-      setTimeout(playConversation, 500);
+      setTimeout(playConversation, 600);
     }
   }
 
