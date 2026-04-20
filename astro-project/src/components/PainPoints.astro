@@ -49,24 +49,24 @@ import MessageCard from './MessageCard.astro';
         <!-- Pain Point 1: Customer Complaint -->
         <div class="space-y-4">
           <!-- Customer message (problem) -->
-          <div class="flex justify-end scroll-reveal">
-            <MessageCard color="red" direction="right" size="lg">
+          <div class="flex justify-start scroll-reveal">
+            <MessageCard color="red" direction="left" size="lg">
               <div class="flex items-center gap-2 mb-2">
                 <span class="text-2xl">😤</span>
-                <span class="font-bold">לקוחות שנוטשים</span>
+                <span class="font-bold">שאלות חוזרות</span>
               </div>
-              <p class="text-sm">חיכיתי 20 דקות לתגובה ואז סתם עזבו! אין לי סבלנות לכזה...</p>
+              <p class="text-sm">שוב פעם הוא שאל אותי על זמינות ומחיר.. נמאס לי לענות על אותו דבר</p>
             </MessageCard>
           </div>
           
           <!-- Bot message (solution) -->
-          <div class="flex justify-start scroll-reveal delay-100">
-            <MessageCard color="blue" direction="left" size="lg">
+          <div class="flex justify-end scroll-reveal delay-100">
+            <MessageCard color="blue" direction="right" size="lg">
               <div class="flex items-center gap-2 mb-2">
                 <span class="text-2xl">✅</span>
                 <span class="font-bold">הפתרון שלנו</span>
               </div>
-              <p class="text-sm">הצ'אטבוט שלנו עונה מיידית - 24/7! לקוחות מקבלים תשובה תוך שניות ונשארים מרוצים.</p>
+              <p class="text-sm">הצ'אטבוט שלנו עונה מיידית - 24/7! לקוחות מקבלים תשובה תוך שניות בלי שאתה צריך לפתוח את הטלפון.</p>
             </MessageCard>
           </div>
         </div>
@@ -74,24 +74,24 @@ import MessageCard from './MessageCard.astro';
         <!-- Pain Point 2: Repetitive Questions -->
         <div class="space-y-4">
           <!-- Customer message (problem) -->
-          <div class="flex justify-end scroll-reveal delay-200">
-            <MessageCard color="red" direction="right" size="lg">
+          <div class="flex justify-start scroll-reveal delay-200">
+            <MessageCard color="red" direction="left" size="lg">
               <div class="flex items-center gap-2 mb-2">
                 <span class="text-2xl">😫</span>
-                <span class="font-bold">שאלות חוזרות</span>
+                <span class="font-bold">"סגרתי עם מישהו אחר"</span>
               </div>
-              <p class="text-sm">שוב ושוב אותן שאלות! מה המחיר? מתי אתם פתוחים? איך משלמים? זה נגמר לי מהיום...</p>
+              <p class="text-sm">חזרתי ללקוח אחרי חצי שעה והוא כבר סגר עם מישהו אחר..</p>
             </MessageCard>
           </div>
           
           <!-- Bot message (solution) -->
-          <div class="flex justify-start scroll-reveal delay-300">
-            <MessageCard color="blue" direction="left" size="lg">
+          <div class="flex justify-end scroll-reveal delay-300">
+            <MessageCard color="blue" direction="right" size="lg">
               <div class="flex items-center gap-2 mb-2">
                 <span class="text-2xl">🤖</span>
                 <span class="font-bold">הפתרון שלנו</span>
               </div>
-              <p class="text-sm">הצ'אטבוט עונה אוטומטית על 90% מהשאלות החוזרות ומעביר רק את המקרים האמיתיים אליכם.</p>
+              <p class="text-sm">הצ'אטבוט עונה בשנייה שהלקוח שלח הודעה. הוא 'נועל' אותו אצלך בעסק כשהוא עוד חם ומוכן לקנות.</p>
             </MessageCard>
           </div>
         </div>
@@ -99,24 +99,24 @@ import MessageCard from './MessageCard.astro';
         <!-- Pain Point 3: Lost Leads -->
         <div class="space-y-4">
           <!-- Customer message (problem) -->
-          <div class="flex justify-end scroll-reveal delay-400">
-            <MessageCard color="red" direction="right" size="lg">
+          <div class="flex justify-start scroll-reveal delay-400">
+            <MessageCard color="red" direction="left" size="lg">
               <div class="flex items-center gap-2 mb-2">
                 <span class="text-2xl">😢</span>
                 <span class="font-bold">לידים שאבדו</span>
               </div>
-              <p class="text-sm">הייתי לי חנות אונליין ולא עניתי בזמן. הלקוח הלך למתחרה ואני הפסדתי הזדמנות...</p>
+              <p class="text-sm">הלקוח שלח לי הודעה ושכחתי לחזור אליו.. עכשיו הוא כבר לא עונה לי</p>
             </MessageCard>
           </div>
           
           <!-- Bot message (solution) -->
-          <div class="flex justify-start scroll-reveal delay-500">
-            <MessageCard color="blue" direction="left" size="lg">
+          <div class="flex justify-end scroll-reveal delay-500">
+            <MessageCard color="blue" direction="right" size="lg">
               <div class="flex items-center gap-2 mb-2">
                 <span class="text-2xl">💰</span>
                 <span class="font-bold">הפתרון שלנו</span>
               </div>
-              <p class="text-sm">הצ'אטבוט זמין 24/7, גם בשעות שבת וחג. לידים חמים לא נעלמים לעולם!</p>
+              <p class="text-sm">הצ'אטבוט זמין 24/7, גם בשעות שבת וחג, שומר הכל ומתעד את השיחה. לידים חמים לא נעלמים לעולם!</p>
             </MessageCard>
           </div>
         </div>
@@ -157,19 +157,19 @@ import MessageCard from './MessageCard.astro';
   /* Add subtle glow effect on hover */
   .pain-point-conversation:hover :global(.message-card),
   .scroll-reveal:hover :global(.message-card) {
-    box-shadow: 0 8px 30px -10px rgba(239, 68, 68, 0.3) !important;
+    box-shadow: 0 8px 30px -10px rgba(59, 130, 246, 0.3) !important;
   }
 
-  /* Make customer complaints more prominent */
-  .pain-point-conversation :global(.bg-red-600),
-  .scroll-reveal :global(.bg-red-600) {
-    box-shadow: 0 4px 20px -5px rgba(239, 68, 68, 0.4) !important;
-  }
-
-  /* Make solution messages stand out */
+  /* Make problem messages (now blue) stand out */
   .pain-point-conversation :global(.bg-blue-600),
   .scroll-reveal :global(.bg-blue-600) {
-    box-shadow: 0 4px 20px -5px rgba(59, 130, 246, 0.3) !important;
+    box-shadow: 0 4px 20px -5px rgba(59, 130, 246, 0.4) !important;
+  }
+
+  /* Make solution messages (now red) stand out */
+  .pain-point-conversation :global(.bg-red-600),
+  .scroll-reveal :global(.bg-red-600) {
+    box-shadow: 0 4px 20px -5px rgba(239, 68, 68, 0.3) !important;
   }
 
   /* Notification bell animation - Only ring animates, bell stays still */
