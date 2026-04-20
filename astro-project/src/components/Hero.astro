@@ -3,10 +3,116 @@ import HeroPhoneDemo from './HeroPhoneDemo.astro';
 ---
 
 <section class="min-h-screen flex items-center relative overflow-hidden">
-  <!-- Background texture -->
-  <div class="absolute inset-0 opacity-30">
-    <div class="absolute top-20 left-10 w-72 h-72 bg-blue-900/20 dark:bg-blue-950/30 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-800/20 dark:bg-blue-900/30 rounded-full blur-3xl"></div>
+  <!-- Enhanced automation-themed background -->
+  <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-zinc-950 dark:via-zinc-900 dark:to-slate-900">
+    <!-- Large gradient orbs -->
+    <div class="absolute top-[-10%] right-[-5%] w-[700px] h-[700px] bg-gradient-to-br from-blue-600/20 via-blue-500/10 to-transparent rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-[-10%] left-[-5%] w-[600px] h-[600px] bg-gradient-to-tr from-blue-700/15 via-blue-600/10 to-transparent rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+    <div class="absolute top-[40%] left-[20%] w-[400px] h-[400px] bg-gradient-to-br from-indigo-500/10 to-transparent rounded-full blur-3xl"></div>
+    
+    <!-- Grid pattern overlay -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+    
+    <!-- Animated geometric shapes -->
+    <div class="absolute top-[15%] left-[10%] w-4 h-4 bg-blue-600/30 rotate-45 animate-spin" style="animation-duration: 8s;"></div>
+    <div class="absolute top-[25%] right-[15%] w-3 h-3 bg-blue-700/40 rotate-45 animate-spin" style="animation-duration: 12s;"></div>
+    <div class="absolute bottom-[30%] left-[20%] w-2 h-2 bg-indigo-600/30 rotate-45 animate-spin" style="animation-duration: 15s;"></div>
+    <div class="absolute bottom-[20%] right-[25%] w-3 h-3 bg-blue-800/20 rotate-45 animate-spin" style="animation-duration: 10s;"></div>
+    
+    <!-- Floating circles -->
+    <div class="absolute top-[20%] left-[8%] w-20 h-20 border-2 border-blue-600/10 rounded-full animate-pulse"></div>
+    <div class="absolute top-[60%] right-[10%] w-16 h-16 border-2 border-blue-700/10 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
+    <div class="absolute bottom-[15%] left-[15%] w-24 h-24 border-2 border-indigo-600/10 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+    
+    <!-- SVG enhanced patterns -->
+    <svg class="absolute inset-0 w-full h-full opacity-20 dark:opacity-15" xmlns="http://www.w3.org/2000/svg">
+      <!-- Animated connection lines -->
+      <g stroke="url(#gradient1)" stroke-width="1.5" fill="none" stroke-linecap="round">
+        <!-- Path 1: Top left to center -->
+        <path d="M80 120 Q 180 160 280 180" stroke-dasharray="8,8">
+          <animate attributeName="stroke-dashoffset" from="16" to="0" dur="3s" repeatCount="indefinite"/>
+        </path>
+        <!-- Path 2: Center to right -->
+        <path d="M280 180 Q 420 140 580 200" stroke-dasharray="8,8">
+          <animate attributeName="stroke-dashoffset" from="16" to="0" dur="4s" repeatCount="indefinite"/>
+        </path>
+        <!-- Path 3: Bottom flow -->
+        <path d="M120 520 Q 280 480 440 540" stroke-dasharray="8,8">
+          <animate attributeName="stroke-dashoffset" from="16" to="0" dur="5s" repeatCount="indefinite"/>
+        </path>
+        <!-- Path 4: Vertical connector -->
+        <path d="M280 180 Q 300 350 280 520" stroke-dasharray="8,8">
+          <animate attributeName="stroke-dashoffset" from="16" to="0" dur="6s" repeatCount="indefinite"/>
+        </path>
+      </g>
+      
+      <!-- Animated data nodes -->
+      <g fill="url(#gradient2)">
+        <circle cx="80" cy="120" r="8">
+          <animate attributeName="r" values="8;12;8" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="280" cy="180" r="10">
+          <animate attributeName="r" values="10;14;10" dur="4s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="580" cy="200" r="6">
+          <animate attributeName="r" values="6;9;6" dur="2.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="120" cy="520" r="9">
+          <animate attributeName="r" values="9;13;9" dur="3.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.6;1;0.6" dur="3.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="440" cy="540" r="7">
+          <animate attributeName="r" values="7;10;7" dur="4.2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.5;1;0.5" dur="4.2s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+      
+      <!-- Animated bar chart -->
+      <g fill="url(#gradient3)" opacity="0.4">
+        <rect x="680" y="360" width="12" height="45" rx="3">
+          <animate attributeName="height" values="45;55;45" dur="2s" repeatCount="indefinite"/>
+          <animate attributeName="y" values="360;350;360" dur="2s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="700" y="350" width="12" height="55" rx="3">
+          <animate attributeName="height" values="55;65;55" dur="2.5s" repeatCount="indefinite"/>
+          <animate attributeName="y" values="350;340;350" dur="2.5s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="720" y="340" width="12" height="65" rx="3">
+          <animate attributeName="height" values="65;75;65" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="y" values="340;330;340" dur="3s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="740" y="355" width="12" height="50" rx="3">
+          <animate attributeName="height" values="50;60;50" dur="2.2s" repeatCount="indefinite"/>
+          <animate attributeName="y" values="355;345;355" dur="2.2s" repeatCount="indefinite"/>
+        </rect>
+      </g>
+      
+      <!-- Animated wave pattern -->
+      <path d="M50 650 Q 180 620 310 650 T 570 650 T 830 650" stroke="url(#gradient1)" stroke-width="2" fill="none" opacity="0.3">
+        <animate attributeName="d" 
+          values="M50 650 Q 180 620 310 650 T 570 650 T 830 650;M50 650 Q 180 680 310 650 T 570 650 T 830 650;M50 650 Q 180 620 310 650 T 570 650 T 830 650" 
+          dur="5s" repeatCount="indefinite"/>
+      </path>
+      
+      <!-- Gradients definition -->
+      <defs>
+        <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="gradient3" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:1" />
+        </linearGradient>
+      </defs>
+    </svg>
   </div>
   
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative">
