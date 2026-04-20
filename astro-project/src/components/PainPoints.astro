@@ -10,8 +10,15 @@ import MessageCard from './MessageCard.astro';
         <div class="inline-block mb-4">
           <span class="text-sm font-semibold text-stone-500 dark:text-stone-400 uppercase tracking-wider">הבעיה</span>
         </div>
-        <h2 class="text-4xl md:text-5xl font-bold text-stone-900 dark:text-stone-100 mb-6 leading-tight">
+        <h2 class="text-4xl md:text-5xl font-bold text-stone-900 dark:text-stone-100 mb-6 leading-tight flex items-center gap-3">
           מכיר את התחושה?
+          <!-- Notification bell icon -->
+          <span class="inline-flex items-center justify-center w-10 h-10 bg-red-500 rounded-full text-white shadow-lg notify-v4 relative">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"/>
+            </svg>
+            <span class="absolute inset-0 rounded-full bg-red-500 ring-v4"></span>
+          </span>
         </h2>
         <p class="text-xl text-stone-600 dark:text-stone-300 leading-relaxed">
           בעיות אלו עולות לעסקים אלפים בהכנסות כל חודש - והן בדיוק מה שצ'אטבוט AI פותר
@@ -146,5 +153,41 @@ import MessageCard from './MessageCard.astro';
   .pain-point-conversation :global(.bg-blue-600),
   .scroll-reveal :global(.bg-blue-600) {
     box-shadow: 0 4px 20px -5px rgba(59, 130, 246, 0.3) !important;
+  }
+
+  /* Notification bell animation - V4 Sharp Shake */
+  .notify-v4 {
+    animation: notify4 1.65s ease-out infinite;
+  }
+
+  .ring-v4 {
+    animation: ring4 1.65s ease-out infinite;
+  }
+
+  @keyframes notify4 {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    6% { transform: scale(1.2) rotate(-25deg); }
+    12% { transform: scale(1.2) rotate(25deg); }
+    18% { transform: scale(1.2) rotate(-25deg); }
+    24% { transform: scale(1.2) rotate(25deg); }
+    30% { transform: scale(1.2) rotate(-25deg); }
+    36% { transform: scale(1.2) rotate(25deg); }
+    42% { transform: scale(1.2) rotate(-25deg); }
+    48% { transform: scale(1.2) rotate(25deg); }
+    54% { transform: scale(1.2) rotate(-25deg); }
+    60% { transform: scale(1.2) rotate(25deg); }
+    66% { transform: scale(1.2) rotate(-25deg); }
+    72% { transform: scale(1.2) rotate(25deg); }
+    78% { transform: scale(1.2) rotate(-25deg); }
+    84% { transform: scale(1.2) rotate(25deg); }
+    90% { transform: scale(1.2) rotate(-12deg); }
+    91% { transform: scale(1) rotate(0deg); }
+  }
+
+  @keyframes ring4 {
+    0%, 100% { opacity: 0; transform: scale(1); }
+    6% { opacity: 0.6; transform: scale(1); }
+    45% { opacity: 0.2; transform: scale(1.8); }
+    91% { opacity: 0; transform: scale(2.3); }
   }
 </style>
