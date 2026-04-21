@@ -9,7 +9,7 @@
 
     
     <!-- Primary Phone Capture Form -->
-    <div class="bg-white dark:bg-zinc-900 rounded-3xl p-8 md:p-12 border-2 border-blue-900/20 dark:border-blue-800/30 shadow-xl mb-8 scroll-reveal delay-100">
+    <div id="cta-form-container" class="bg-white dark:bg-zinc-900 rounded-3xl p-8 md:p-12 border-2 border-blue-900/20 dark:border-blue-800/30 shadow-xl mb-8 scroll-reveal delay-100">
       <div class="flex items-center justify-center gap-2 mb-6">
         <div class="w-3 h-3 bg-blue-900 rounded-full animate-pulse"></div>
         <span class="text-blue-900 dark:text-blue-300 font-semibold">
@@ -20,27 +20,32 @@
       <div class="space-y-3 max-w-lg mx-auto mb-4">
         <div class="grid grid-cols-2 gap-3">
           <input 
+            id="cta-first-name"
             type="text" 
             placeholder="שם פרטי" 
             class="w-full px-4 py-3 rounded-xl border-2 border-stone-300 dark:border-zinc-700 focus:border-blue-900 dark:focus:border-blue-700 focus:outline-none text-stone-900 dark:text-stone-100 placeholder-stone-400 dark:placeholder-zinc-500 transition-all"
           />
           <input 
+            id="cta-last-name"
             type="text" 
             placeholder="שם משפחה" 
             class="w-full px-4 py-3 rounded-xl border-2 border-stone-300 dark:border-zinc-700 focus:border-blue-900 dark:focus:border-blue-700 focus:outline-none text-stone-900 dark:text-stone-100 placeholder-stone-400 dark:placeholder-zinc-500 transition-all"
           />
         </div>
-        <div class="flex flex-col sm:flex-row gap-3">
-          <input 
-            type="tel" 
-            placeholder="050-000-0000" 
-            class="flex-1 px-4 py-3 rounded-xl border-2 border-stone-300 dark:border-zinc-700 focus:border-blue-900 dark:focus:border-blue-700 focus:outline-none text-stone-900 dark:text-stone-100 placeholder-stone-400 dark:placeholder-zinc-500 transition-all"
-            dir="ltr"
-          />
-          <button class="px-6 py-3 bg-blue-900 hover:bg-blue-800 text-white rounded-xl font-semibold transition-all transform hover:scale-105 whitespace-nowrap">
-            דברו איתי!
-          </button>
-        </div>
+        <input 
+          id="cta-phone-number"
+          type="tel" 
+          placeholder="050-000-0000" 
+          class="w-full px-4 py-3 rounded-xl border-2 border-stone-300 dark:border-zinc-700 focus:border-blue-900 dark:focus:border-blue-700 focus:outline-none text-stone-900 dark:text-stone-100 placeholder-stone-400 dark:placeholder-zinc-500 transition-all"
+          dir="ltr"
+        />
+        <label class="flex items-start gap-3 text-sm text-stone-700 dark:text-stone-300 cursor-pointer p-3 bg-stone-50 dark:bg-zinc-800 rounded-lg border border-stone-200 dark:border-zinc-700">
+          <input id="cta-consent-checkbox" type="checkbox" class="mt-1 w-5 h-5 rounded border-stone-300 text-blue-900 focus:ring-blue-900 focus:ring-2" />
+          <span>קראתי ואני מסכים/ה ל<a href="/terms" class="text-blue-600 dark:text-blue-400 hover:underline font-semibold">תקנון ומדיניות הפרטיות</a></span>
+        </label>
+        <button id="cta-submit-btn" type="button" class="w-full px-6 py-3 bg-blue-900 hover:bg-blue-800 text-white rounded-xl font-semibold transition-all transform hover:scale-105 whitespace-nowrap">
+          דברו איתי!
+        </button>
       </div>
       
       <div class="flex items-center justify-center gap-6 text-sm">
@@ -64,3 +69,107 @@
     transform: scale(1) translateY(0);
   }
 </style>
+
+<script>
+  // CTA form validation - isolated script
+  (function() {
+    const form = document.getElementById('cta-form-container');
+    const submitBtn = document.getElementById('cta-submit-btn');
+    const firstName = document.getElementById('cta-first-name');
+    const lastName = document.getElementById('cta-last-name');
+    const phone = document.getElementById('cta-phone-number');
+    const checkbox = document.getElementById('cta-consent-checkbox');
+    
+    if (!form || !submitBtn) return;
+    
+    // Helper function to set error state
+    function setError(input, isError) {
+      if (isError) {
+        input.classList.remove('border-stone-300', 'dark:border-zinc-700');
+        input.classList.add('border-red-500');
+      } else {
+        input.classList.remove('border-red-500');
+        input.classList.add('border-stone-300', 'dark:border-zinc-700');
+      }
+    }
+    
+    // Remove error when typing
+    firstName.addEventListener('input', () => setError(firstName, false));
+    lastName.addEventListener('input', () => setError(lastName, false));
+    phone.addEventListener('input', () => setError(phone, false));
+    
+    checkbox.addEventListener('change', () => {
+      if (checkbox.checked) {
+        checkbox.classList.remove('ring-2', 'ring-red-500');
+        checkbox.parentElement.classList.remove('text-red-600', 'border-red-500');
+      }
+    });
+    
+    submitBtn.addEventListener('click', () => {
+      let isValid = true;
+      
+      // Clear all errors first
+      setError(firstName, false);
+      setError(lastName, false);
+      setError(phone, false);
+      checkbox.classList.remove('ring-2', 'ring-red-500');
+      checkbox.parentElement.classList.remove('text-red-600', 'border-red-500');
+      
+      // Validate each field
+      if (!firstName.value.trim()) {
+        setError(firstName, true);
+        isValid = false;
+      }
+      
+      if (!lastName.value.trim()) {
+        setError(lastName, true);
+        isValid = false;
+      }
+      
+      if (!phone.value.trim()) {
+        setError(phone, true);
+        isValid = false;
+      } else {
+        const phoneDigits = phone.value.replace(/\D/g, '');
+        if (phoneDigits.length < 9) {
+          setError(phone, true);
+          isValid = false;
+        }
+      }
+      
+      if (!checkbox.checked) {
+        checkbox.classList.add('ring-2', 'ring-red-500');
+        checkbox.parentElement.classList.add('text-red-600', 'border-red-500');
+        isValid = false;
+      }
+      
+      if (!isValid) return;
+      
+      // Success!
+      form.classList.add('bg-green-50', 'border-green-500');
+      submitBtn.textContent = 'הפרטים התקבלו! ✓';
+      submitBtn.classList.remove('bg-blue-900');
+      submitBtn.classList.add('bg-green-600');
+      
+      // Demo API
+      fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          form: 'cta',
+          firstName: firstName.value,
+          lastName: lastName.value,
+          phone: phone.value
+        })
+      }).then(res => res.json())
+        .then(data => console.log('✅ CTA form sent:', data))
+        .catch(err => console.log('❌ Error:', err));
+      
+      // Clear fields immediately - form stays green forever, button stays green forever
+      firstName.value = '';
+      lastName.value = '';
+      phone.value = '';
+      checkbox.checked = false;
+    });
+  })();
+</script>

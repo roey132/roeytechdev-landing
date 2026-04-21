@@ -43,34 +43,39 @@ import HeroPhoneDemo from './HeroPhoneDemo.astro';
         </p>
         
         <!-- Phone Capture Form - Primary CTA -->
-        <div class="bg-white dark:bg-zinc-900 rounded-2xl p-6 border-2 border-blue-900/20 dark:border-blue-800/30 shadow-xl">
+        <div id="hero-form-container" class="bg-white dark:bg-zinc-900 rounded-2xl p-6 border-2 border-blue-900/20 dark:border-blue-800/30 shadow-xl">
           <p class="text-lg font-semibold text-stone-900 dark:text-stone-100 mb-4">
             השאירו פרטים ונחזור אליכם בהקדם!
           </p>
           <div class="space-y-3">
             <div class="grid grid-cols-2 gap-3">
               <input 
+                id="hero-first-name"
                 type="text"
                 placeholder="שם פרטי" 
                 class="w-full px-4 py-3 rounded-xl border-2 border-stone-300 dark:border-zinc-700 focus:border-blue-900 dark:focus:border-blue-700 focus:outline-none text-stone-900 dark:text-stone-100 placeholder-stone-400 dark:placeholder-zinc-500 transition-all"
               />
               <input 
+                id="hero-last-name"
                 type="text"
                 placeholder="שם משפחה" 
                 class="w-full px-4 py-3 rounded-xl border-2 border-stone-300 dark:border-zinc-700 focus:border-blue-900 dark:focus:border-blue-700 focus:outline-none text-stone-900 dark:text-stone-100 placeholder-stone-400 dark:placeholder-zinc-500 transition-all"
               />
             </div>
-            <div class="flex flex-col sm:flex-row gap-3">
-              <input 
-                type="tel"
-                placeholder="050-000-0000" 
-                class="flex-1 px-4 py-3 rounded-xl border-2 border-stone-300 dark:border-zinc-700 focus:border-blue-900 dark:focus:border-blue-700 focus:outline-none text-stone-900 dark:text-stone-100 placeholder-stone-400 dark:placeholder-zinc-500 transition-all"
-                dir="ltr"
-              />
-              <button class="px-6 py-3 bg-blue-900 hover:bg-blue-800 text-white rounded-xl font-semibold transition-all transform hover:scale-105 whitespace-nowrap">
-                דברו איתי
-              </button>
-            </div>
+            <input 
+              id="hero-phone-number"
+              type="tel"
+              placeholder="050-000-0000" 
+              class="w-full px-4 py-3 rounded-xl border-2 border-stone-300 dark:border-zinc-700 focus:border-blue-900 dark:focus:border-blue-700 focus:outline-none text-stone-900 dark:text-stone-100 placeholder-stone-400 dark:placeholder-zinc-500 transition-all"
+              dir="ltr"
+            />
+            <label class="flex items-start gap-3 text-sm text-stone-700 dark:text-stone-300 cursor-pointer p-3 bg-stone-50 dark:bg-zinc-800 rounded-lg border border-stone-200 dark:border-zinc-700">
+              <input id="hero-consent-checkbox" type="checkbox" class="mt-1 w-5 h-5 rounded border-stone-300 text-blue-900 focus:ring-blue-900 focus:ring-2" />
+              <span>קראתי ואני מסכים/ה ל<a href="/terms" class="text-blue-600 dark:text-blue-400 hover:underline font-semibold">תקנון ומדיניות הפרטיות</a></span>
+            </label>
+            <button id="hero-submit-btn" type="button" class="w-full px-6 py-3 bg-blue-900 hover:bg-blue-800 text-white rounded-xl font-semibold transition-all transform hover:scale-105 whitespace-nowrap">
+              דברו איתי
+            </button>
           </div>
           <p class="text-xs text-stone-500 dark:text-stone-400 mt-3">
            ללא התחייבות • שיחת ייעוץ בחינם
@@ -142,4 +147,108 @@ import HeroPhoneDemo from './HeroPhoneDemo.astro';
   
   // Start the animation
   setTimeout(type, 1000);
+</script>
+
+<script>
+  // Hero form validation - isolated script
+  (function() {
+    const form = document.getElementById('hero-form-container');
+    const submitBtn = document.getElementById('hero-submit-btn');
+    const firstName = document.getElementById('hero-first-name');
+    const lastName = document.getElementById('hero-last-name');
+    const phone = document.getElementById('hero-phone-number');
+    const checkbox = document.getElementById('hero-consent-checkbox');
+    
+    if (!form || !submitBtn) return;
+    
+    // Helper function to set error state
+    function setError(input, isError) {
+      if (isError) {
+        input.classList.remove('border-stone-300', 'dark:border-zinc-700');
+        input.classList.add('border-red-500');
+      } else {
+        input.classList.remove('border-red-500');
+        input.classList.add('border-stone-300', 'dark:border-zinc-700');
+      }
+    }
+    
+    // Remove error when typing
+    firstName.addEventListener('input', () => setError(firstName, false));
+    lastName.addEventListener('input', () => setError(lastName, false));
+    phone.addEventListener('input', () => setError(phone, false));
+    
+    checkbox.addEventListener('change', () => {
+      if (checkbox.checked) {
+        checkbox.classList.remove('ring-2', 'ring-red-500');
+        checkbox.parentElement.classList.remove('text-red-600', 'border-red-500');
+      }
+    });
+    
+    submitBtn.addEventListener('click', () => {
+      let isValid = true;
+      
+      // Clear all errors first
+      setError(firstName, false);
+      setError(lastName, false);
+      setError(phone, false);
+      checkbox.classList.remove('ring-2', 'ring-red-500');
+      checkbox.parentElement.classList.remove('text-red-600', 'border-red-500');
+      
+      // Validate each field
+      if (!firstName.value.trim()) {
+        setError(firstName, true);
+        isValid = false;
+      }
+      
+      if (!lastName.value.trim()) {
+        setError(lastName, true);
+        isValid = false;
+      }
+      
+      if (!phone.value.trim()) {
+        setError(phone, true);
+        isValid = false;
+      } else {
+        const phoneDigits = phone.value.replace(/\D/g, '');
+        if (phoneDigits.length < 9) {
+          setError(phone, true);
+          isValid = false;
+        }
+      }
+      
+      if (!checkbox.checked) {
+        checkbox.classList.add('ring-2', 'ring-red-500');
+        checkbox.parentElement.classList.add('text-red-600', 'border-red-500');
+        isValid = false;
+      }
+      
+      if (!isValid) return;
+      
+      // Success!
+      form.classList.add('bg-green-50', 'border-green-500');
+      submitBtn.textContent = 'הפרטים התקבלו! ✓';
+      submitBtn.classList.remove('bg-blue-900');
+      submitBtn.classList.add('bg-green-600');
+      
+      // Demo API
+      fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          form: 'hero',
+          firstName: firstName.value,
+          lastName: lastName.value,
+          phone: phone.value
+        })
+      }).then(res => res.json())
+        .then(data => console.log('✅ Hero form sent:', data))
+        .catch(err => console.log('❌ Error:', err));
+      
+      // Clear fields immediately - form stays green forever, button stays green forever
+      firstName.value = '';
+      lastName.value = '';
+      phone.value = '';
+      checkbox.checked = false;
+    });
+  })();
 </script>
