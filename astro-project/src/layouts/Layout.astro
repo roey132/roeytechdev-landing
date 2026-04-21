@@ -80,7 +80,7 @@ const { title = "רועיטק - Automation Solutions" } = Astro.props;
               if (phoneInput && phoneInput.value) {
                 const phoneNumber = phoneInput.value;
                 const message = `היי, השארתי את המספר: ${phoneNumber}. אשמח לשמוע עוד על אוטומציה לעסק שלי.`;
-                const whatsappUrl = `https://wa.me/972500000000?text=${encodeURIComponent(message)}`;
+                const whatsappUrl = `https://wa.me/972557294597?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
                 
                 // Show success feedback
@@ -100,7 +100,7 @@ const { title = "רועיטק - Automation Solutions" } = Astro.props;
                 
                 setTimeout(() => {
                   phoneInput.classList.remove('border-red-500', 'animate-shake');
-                  phoneInput.placeholder = '050-000-0000';
+                  phoneInput.placeholder = '055-729-4597';
                 }, 2000);
               }
             });
