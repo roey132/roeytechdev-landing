@@ -1,6 +1,5 @@
 ---
 import CookieConsent from '../components/CookieConsent.astro';
-import AccessibilityButton from '../components/AccessibilityButton.astro';
 
 interface Props {
   title?: string;
@@ -43,7 +42,6 @@ const { title = "רועיטק - Automation Solutions" } = Astro.props;
   <body class="bg-stone-50 dark:bg-zinc-950 text-stone-900 dark:text-stone-100 transition-colors font-sans antialiased">
     <slot />
     <CookieConsent />
-    <AccessibilityButton />
     
     <script is:inline>
       // Phone formatting for all forms
