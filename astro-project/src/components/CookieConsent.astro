@@ -1,0 +1,86 @@
+---
+// Cookie Consent Banner for Israeli/EU GDPR compliance
+---
+
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white dark:bg-zinc-900 border-t border-stone-200 dark:border-zinc-800 shadow-2xl z-50 p-4 md:p-6 transform translate-y-full transition-transform duration-300">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="flex items-start gap-4">
+      <div class="text-3xl">🍪</div>
+      <div>
+        <h3 class="text-lg font-bold text-stone-900 dark:text-stone-100 mb-1">עוגיות באתר זה</h3>
+        <p class="text-sm text-stone-600 dark:text-stone-400">
+          אנו משתמשים בעוגיות כדי לשפר את חוויית המשתמש שלכם ולנתח את השימוש באתר. קראו עוד ב<a href="/privacy" class="text-blue-600 dark:text-blue-400 hover:underline">מדיניות הפרטיות</a> שלנו.
+        </p>
+      </div>
+    </div>
+    
+    <div class="flex gap-3">
+      <button 
+        id="accept-cookies" 
+        class="px-6 py-3 bg-blue-900 hover:bg-blue-800 text-white rounded-xl font-semibold transition-all transform hover:scale-105 text-sm"
+        aria-label="קבל עוגיות">
+        קבלת הכל
+      </button>
+      <button 
+        id="decline-cookies" 
+        class="px-6 py-3 bg-stone-200 dark:bg-zinc-700 hover:bg-stone-300 dark:hover:bg-zinc-600 text-stone-700 dark:text-stone-300 rounded-xl font-semibold transition-all text-sm"
+        aria-label="דחה עוגיות">
+        רק עוגיות חיוניים
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Cookie Consent Banner
+  function initCookieBanner() {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const declineBtn = document.getElementById('decline-cookies');
+    
+    // Check if user already made a choice
+    const cookieChoice = localStorage.getItem('cookieConsent');
+    
+    if (!cookieChoice) {
+      // Show banner after 2 seconds
+      setTimeout(() => {
+        banner.classList.remove('translate-y-full');
+      }, 2000);
+    } else if (cookieChoice === 'accepted') {
+      // Load analytics/other cookies
+      console.log('Analytics cookies loaded');
+    }
+    
+    // Accept all cookies
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'accepted');
+      localStorage.setItem('cookieConsentDate', new Date().toISOString());
+      banner.classList.add('translate-y-full');
+      
+      // Set actual cookie for server-side
+      document.cookie = 'cookieConsent=accepted; path=/; max-age=365; SameSite=Lax';
+      
+      // Here you would initialize analytics
+      console.log('All cookies accepted');
+    });
+    
+    // Accept only essential cookies
+    declineBtn.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'essential');
+      localStorage.setItem('cookieConsentDate', new Date().toISOString());
+      banner.classList.add('translate-y-full');
+      
+      // Set essential cookies only
+      document.cookie = 'cookieConsent=essential; path=/; max-age=365; SameSite=Lax';
+      
+      console.log('Only essential cookies accepted');
+    });
+  }
+  
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCookieBanner);
+  } else {
+    initCookieBanner();
+  }
+</script>

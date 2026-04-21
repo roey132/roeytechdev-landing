@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="מדיניות פרטיות | רועיטק">
+  <main class="min-h-screen py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl md:text-5xl font-bold text-stone-900 dark:text-stone-100 mb-8">מדיניות פרטיות</h1>
+      
+      <div class="prose prose-lg dark:prose-invert max-w-none">
+        <p class="text-lg text-stone-600 dark:text-stone-400 mb-8">
+          עדכון אחרון: ינואר 2025
+        </p>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-stone-900 dark:text-stone-100 mb-4">הקדמה</h2>
+          <p class="text-stone-700 dark:text-stone-300">
+            ברוכים הבאים לאתר רועיטק ("האתר"). אנו מכבדים את הפרטיות שלכם ומחויבים להגן על המידע האישי שלכם. מדיניות פרטיות זו מסבירה כיצד אנו אוספים, משתמשים ומגנים על המידע שלכם בהתאם לדין הגנת הפרטיות, התשע"ח [חוק הגנת הפרטיות], תשע"ח-2018 ותקנות הגנת הפרטיות (מידע זהות ונתוני מדידה), תשע"ט-2019.
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-stone-900 dark:text-stone-100 mb-4">מידע שאנו אוספים</h2>
+          <p class="text-stone-700 dark:text-stone-300 mb-4">אנו אוספים את סוגי המידע הבאים:</p>
+          
+          <ul class="list-disc pl-6 space-y-2 text-stone-700 dark:text-stone-300">
+            <li><strong>מידע אישי:</strong> שם פרטי, כתובת אימייל, מספר טלפון, פרטי עסק</li>
+            <li><strong>מידע טכני:</strong> כתובת IP, סוג דפדפן, מערכת הפעלה, זמני גלישה</li>
+            <li><strong>מידע עסקי:</strong> פרטי התקשרות, העדפות שיווק, תקשורת עמנו</li>
+          </ul>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-stone-900 dark:text-stone-100 mb-4">שימוש במידע</h2>
+          <p class="text-stone-700 dark:text-stone-300 mb-4">אנו משתמשים במידע שלכם למטרות הבאות:</p>
+          
+          <ul class="list-disc pl-6 space-y-2 text-stone-700 dark:text-stone-300">
+            <li>מתן שירות ותמיכה בהתאם לבקשותיכם</li>
+            <li>שיפור השירותים והמוצרים שלנו</li>
+            <li>תקשורת בקשר לעדכונים, הצעות ומידע שיווקי</li>
+            <li>ניתוח ושיפור ביצועי האתר</li>
+            <li>ציות עם דינים ותקנות</li>
+          </ul>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-stone-900 dark:text-stone-100 mb-4">שיתוף מידע</h2>
+          <p class="text-stone-700 dark:text-stone-300">
+            אנו לא משתפים את המידע האישי שלכם עם צדדים שלישיים, למעט במקרים הבאים: כאשר קיבלתם את הסכמתכם, כאשר נדרש על פי חוק, להגנה על זכויותינו, או עם ספקים המספקים שירותים בשמנו בהתאם להסכמי גילוי מפורטים.
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-stone-900 dark:text-stone-100 mb-4">אבטחת מידע</h2>
+          <p class="text-stone-700 dark:text-stone-300">
+            אנו נוקטים באמצעי אבטחה מתקדמים כדי להגן על המידע שלכם, כולל הצפנה, פרוטוקולי SSL, ומדיניות גישה מוגבלות. עם זאת, אין אתר אינטרנט שהוא 100% מאובטח.
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-stone-900 dark:text-stone-100 mb-4">זכויותיכם</h2>
+          <ul class="list-disc pl-6 space-y-2 text-stone-700 dark:text-stone-300">
+            <li><strong>גישה למידע:</strong> יכולת לבקש גישה למידע האישי שלכם</li>
+            <li><strong>תיקון:</strong> יכולת לתקן מידע לא מדויק</li>
+            <li><strong>מחיקה:</strong> יכולת לבקש מחיקת מידע אישי</li>
+            <li><strong>התנגדות:</strong> יכולת להתנגד לעיבוד מסוים</li>
+            <li><strong>העברה:</strong> יכולת לבקש העברת מידע לצד שלישי</li>
+          </ul>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-stone-900 dark:text-stone-100 mb-4">Cookies</h2>
+          <p class="text-stone-700 dark:text-stone-300">
+            האתר משתמש ב-Cookies כדי לשפר את חוויית המשתמש ולנתח את השימוש באתר. אתם יכולים לנהל את העדפות ה-Cookie שלכם בהגדרות הדפדפן.
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-stone-900 dark:text-stone-100 mb-4">ילדים</h2>
+          <p class="text-stone-700 dark:text-stone-300">
+            האתר אינו מיועד לילדים מתחת לגיל 18. אנו לא אוספים במכוון מידע אישי מילדים מתחת לגיל 18.
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-stone-900 dark:text-stone-100 mb-4">שינויים במדיניות</h2>
+          <p class="text-stone-700 dark:text-stone-300">
+            אנו שומרים לנו הזכות לעדכן מדיניות זו מעת לעת. שינויים יפורסמו באתר ויכנסו לתוקף מיידית עם פרסומם.
+          </p>
+        </section>
+
+        <section class="mb-8">
+          <h2 class="text-2xl font-bold text-stone-900 dark:text-stone-100 mb-4">צור קשר</h2>
+          <p class="text-stone-700 dark:text-stone-300 mb-4">
+            לשאלות או בקשות בנוגע למדיניות הפרטיות, צרו קשר עמנו דרך:
+          </p>
+          <p class="text-stone-700 dark:text-stone-300">
+            📧 <a href="mailto:contact@roeytechdev.com" class="text-blue-600 dark:text-blue-400 hover:underline">contact@roeytechdev.com</a>
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+</Layout>
