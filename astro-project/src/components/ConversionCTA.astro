@@ -147,25 +147,45 @@
       
       if (!isValid) return;
       
+      // Format phone number to international format (972...)
+      const phoneDigits = phone.value.replace(/\D/g, '');
+      let formattedPhone = phoneDigits;
+      
+      // Remove leading 0 if present
+      if (formattedPhone.startsWith('0')) {
+        formattedPhone = formattedPhone.substring(1);
+      }
+      
+      // Add Israel country code if not present
+      if (!formattedPhone.startsWith('972')) {
+        formattedPhone = '972' + formattedPhone;
+      }
+      
       // Success!
       form.classList.add('bg-green-50', 'border-green-500');
       submitBtn.textContent = 'הפרטים התקבלו! ✓';
       submitBtn.classList.remove('bg-blue-900');
       submitBtn.classList.add('bg-green-600');
       
-      // Demo API
-      fetch('https://jsonplaceholder.typicode.com/posts', {
+      // Send to n8n webhook
+      const formData = {
+        PhoneNumber: formattedPhone,
+        FirstName: firstName.value.trim(),
+        LastName: lastName.value.trim()
+      };
+      
+      fetch('https://n8n.roeytech.dev/webhook/255b982f-2381-476b-9b6a-3e19e3c0d17c', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          form: 'conversion',
-          firstName: firstName.value,
-          lastName: lastName.value,
-          phone: phone.value
-        })
-      }).then(res => res.json())
-        .then(data => console.log('✅ Conversion form sent:', data))
-        .catch(err => console.log('❌ Error:', err));
+        body: JSON.stringify(formData)
+      }).then(res => {
+        if (res.ok) {
+          console.log('✅ Conversion form sent successfully');
+        } else {
+          console.log('❌ Form submission failed');
+        }
+      })
+      .catch(err => console.log('❌ Error:', err));
       
       // Clear fields immediately - form stays green forever, button stays green forever
       firstName.value = '';

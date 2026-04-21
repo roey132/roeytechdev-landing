@@ -1,0 +1,31 @@
+{
+  "name": "רועיטק - פתרונות אוטומציה AI",
+  "short_name": "רועיטק",
+  "description": "פיתוח צ'אטבוט AI מותאם אישית, מערכות CRM ואוטומציה עסקית",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f5f4",
+  "theme_color": "#1e3a8a",
+  "orientation": "portrait-primary",
+  "dir": "rtl",
+  "lang": "he",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "technology"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "צור קשר",
+      "short_name": "צור קשר",
+      "description": "צור קשר עם רועי אהרונוב",
+      "url": "/#contact",
+      "icons": [{ "src": "/favicon.svg", "sizes": "any" }]
+    }
+  ]
+}

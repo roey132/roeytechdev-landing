@@ -3,20 +3,104 @@ import CookieConsent from '../components/CookieConsent.astro';
 
 interface Props {
   title?: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
 }
 
-const { title = "רועיטק - Automation Solutions" } = Astro.props;
+const { 
+  title = "רועיטק - פתרונות אוטומציה AI וצ'אטבוטים לעסקים",
+  description = "פיתוח צ'אטבוט AI מותאם אישית, מערכות CRM ואוטומציה עסקית. חסכו עד 20 שעות בשבוע עם פתרונות ה-AI המתקדמים של רועי אהרונוב. שירות מקצועי לעסקים בישראל.",
+  image = "/og-image.jpg",
+  canonicalURL = new URL(Astro.url.pathname, Astro.site).href
+} = Astro.props;
+
+const businessInfo = {
+  name: "רועיטק",
+  founder: "רועי אהרונוב",
+  phone: "055-729-4597",
+  email: "roeytechdev@gmail.com",
+  website: "https://roeytech.dev",
+  address: {
+    addressLocality: "ישראל",
+    addressCountry: "IL"
+  }
+};
 ---
 
 <!DOCTYPE html>
 <html lang="he" dir="rtl" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="AI chatbots, custom CRMs, and workflow automation for modern businesses" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    
+    <!-- Primary Meta Tags -->
     <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="צ'אטבוט AI, אוטומציה עסקית, מערכת CRM, פיתוח AI, בוט וואטסאפ, אוטומציה לעסקים, AI ישראל, רועי אהרונוב" />
+    <meta name="author" content={businessInfo.founder} />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Hebrew" />
+    <meta name="geo.region" content="IL" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#1e3a8a" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="og:locale" content="he_IL" />
+    <meta property="og:site_name" content={businessInfo.name} />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+    
+    <!-- Structured Data - Local Business -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": businessInfo.name,
+      "founder": {
+        "@type": "Person",
+        "name": businessInfo.founder
+      },
+      "description": description,
+      "telephone": businessInfo.phone,
+      "email": businessInfo.email,
+      "url": businessInfo.website,
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": businessInfo.address.addressCountry,
+        "addressLocality": businessInfo.address.addressLocality
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "ישראל"
+      },
+      "priceRange": "$$",
+      "openingHours": "Mo-Su 00:00-23:59",
+      "availableLanguage": ["Hebrew", "English"]
+    })} />
+    
     <link rel="stylesheet" href="/src/styles.css" />
     <script is:inline>
       // Dark mode logic - runs immediately to prevent flash

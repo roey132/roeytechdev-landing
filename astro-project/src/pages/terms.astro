@@ -1,14 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const seoData = {
+  title: "תקנון ומדיניות פרטיות | רועיטק - פתרונות אוטומציה",
+  description: "תקנון שימוש ומדיניות פרטיות מלאה של רועיטק. כללי שימוש בשירותי אוטומציה ו-AI, הגנת פרטיות מידע לקוחות, זכויות וחובות משפטיות."
+};
 ---
 
-<Layout title="תקנון ומדיניות פרטיות | רועיטק">
-  <main class="min-h-screen py-20 bg-stone-50 dark:bg-zinc-950">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<Layout 
+  title={seoData.title}
+  description={seoData.description}
+>
+  <main class="min-h-screen py-20 bg-stone-50 dark:bg-zinc-950" role="main">
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="bg-white dark:bg-zinc-900 rounded-3xl shadow-xl p-8 md:p-12">
-        <h1 class="text-3xl md:text-4xl font-bold text-stone-900 dark:text-stone-100 mb-8 text-center">
-          תקנון ותנאי שימוש ומדיניות פרטיות - RoeyTech
-        </h1>
+        <header class="mb-8 text-center">
+          <h1 id="terms-heading" class="text-3xl md:text-4xl font-bold text-stone-900 dark:text-stone-100 mb-4">
+            תקנון ותנאי שימוש ומדיניות פרטיות - RoeyTech
+          </h1>
+          <p class="text-stone-600 dark:text-stone-400">עדכון אחרון: אפריל 2025</p>
+        </header>
         
         <div class="prose prose-lg dark:prose-invert max-w-none">
           <p class="text-lg text-stone-600 dark:text-stone-400 mb-8 leading-relaxed">

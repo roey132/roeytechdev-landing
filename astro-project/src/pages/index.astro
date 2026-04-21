@@ -13,22 +13,68 @@ import Process from '../components/Process.astro';
 import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+const seoData = {
+  title: "רועיטק - פתרונות אוטומציה AI וצ'אטבוטים לעסקים | שירות מקצועי",
+  description: "פיתוח צ'אטבוט AI מותאם אישית, מערכות CRM ואוטומציה עסקית עם רועי אהרונוב. חסכו עד 20 שעות בשבוע עם פתרונות AI מתקדמים לעסקים בישראל. שיחת ייעוץ חינם!",
+  keywords: "צ'אטבוט AI, אוטומציה עסקית, מערכת CRM, פיתוח AI, בוט וואטסאפ, אוטומציה לעסקים, רועי אהרונוב, AI ישראל"
+};
 ---
 
-<Layout title="רועיטק - Automation Solutions for Modern Business">
+<Layout 
+  title={seoData.title}
+  description={seoData.description}
+>
   <ScrollReveal />
   <Navbar />
   
-  <main class="pt-20">
-    <Hero />
-    <PainPoints />
-    <ConversionCTA />
-    <Solutions />
-    <About />
-    <CaseStudies />
-    <Process />
-    <FAQ />
-    <CTA />
+  <main class="pt-20" role="main">
+    <!-- Hero Section - Main value proposition -->
+    <section aria-labelledby="hero-heading">
+      <Hero />
+    </section>
+    
+    <!-- Pain Points - Problems we solve -->
+    <section aria-labelledby="pain-points-heading">
+      <PainPoints />
+    </section>
+    
+    <!-- Conversion CTA - Mid-page call to action -->
+    <section aria-labelledby="conversion-cta-heading">
+      <ConversionCTA />
+    </section>
+    
+    <!-- Solutions - Services we offer -->
+    <section aria-labelledby="solutions-heading" id="services">
+      <Solutions />
+    </section>
+    
+    <!-- About - Company information -->
+    <section aria-labelledby="about-heading">
+      <About />
+    </section>
+    
+    <!-- Case Studies - Social proof and results -->
+    <section aria-labelledby="case-studies-heading" id="case-studies">
+      <CaseStudies />
+    </section>
+    
+    <!-- Process - How we work -->
+    <section aria-labelledby="process-heading" id="process">
+      <Process />
+    </section>
+    
+    <!-- FAQ - Frequently asked questions -->
+    <section aria-labelledby="faq-heading">
+      <FAQ />
+    </section>
+    
+    <!-- Final CTA - Call to action -->
+    <section aria-labelledby="cta-heading" id="contact">
+      <CTA />
+    </section>
+    
+    <!-- Footer - Site navigation and info -->
     <Footer />
     <WhatsAppButton />
   </main>
